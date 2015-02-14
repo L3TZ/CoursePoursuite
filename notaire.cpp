@@ -1,51 +1,51 @@
 #include "notaire.h"
 #include "Exception/notaireexceptiondecisiondejavue.h"
 
-Notaire::Notaire():j1Decision(nullptr),j2Decision(nullptr)
+Notaire::Notaire():fuyardDecision(nullptr),poursuivantDecision(nullptr)
 {
 }
 
 Notaire::~Notaire()
 {
-    if (j1Decision!=nullptr)
-        delete j1Decision;
-    if (j2Decision!=nullptr)
-        delete j2Decision;
+    if (fuyardDecision!=nullptr)
+        delete fuyardDecision;
+    if (poursuivantDecision!=nullptr)
+        delete poursuivantDecision;
 }
 
-Position Notaire::getJ1Decision()const
+Position Notaire::getFuyardDecision()const
 {
-    if (j1Decision!=nullptr)
-        return *j1Decision;
+    if (fuyardDecision!=nullptr)
+        return *fuyardDecision;
     else
-        throw NotaireExceptionAucuneDecision("La décision du joueur 1 n'est pas encore enregistrée.",__LINE__);
+        throw NotaireExceptionAucuneDecision("La décision du fuyard n'est pas encore enregistrée.",__LINE__);
 }
 
-Position Notaire::getJ2Decision()const
+Position Notaire::getPoursuivantDecision()const
 {
-    if (j2Decision!=nullptr)
-        return *j2Decision;
+    if (poursuivantDecision!=nullptr)
+        return *poursuivantDecision;
     else
-        throw NotaireExceptionAucuneDecision("La décision du joueur 2 n'est pas encore enregistrée.",__LINE__);
+        throw NotaireExceptionAucuneDecision("La décision du poursuivant n'est pas encore enregistrée.",__LINE__);
 }
 
-void Notaire::setJ1Decision(Position& p)
+void Notaire::setFuyardDecision(Position& p)
 {
-    if (j1Decision!=nullptr)
-        throw NotaireExceptionDecisionDejaVue("La décision du joueur 1 est déjà enregistrée.",__LINE__);
-    j1Decision=new Position(p);
+    if (fuyardDecision!=nullptr)
+        throw NotaireExceptionDecisionDejaVue("La décision du fuyard est déjà enregistrée.",__LINE__);
+    fuyardDecision=new Position(p);
 }
 
-void Notaire::setJ2Decision(Position& p)
+void Notaire::setPoursuivantDecision(Position& p)
 {
-    if (j2Decision!=nullptr)
-        throw NotaireExceptionDecisionDejaVue("La décision du joueur 2 est déjà enregistrée.",__LINE__);
-    j2Decision=new Position(p);
+    if (poursuivantDecision!=nullptr)
+        throw NotaireExceptionDecisionDejaVue("La décision du poursuivant est déjà enregistrée.",__LINE__);
+    poursuivantDecision=new Position(p);
 }
 
 bool Notaire::tourValide()const
 {
-    if (j1Decision!=nullptr && j2Decision!=nullptr)
+    if (fuyardDecision!=nullptr && poursuivantDecision!=nullptr)
         return true;
     else
         return false;
@@ -53,8 +53,8 @@ bool Notaire::tourValide()const
 
 void Notaire::raz()
 {
-    if (j1Decision!=nullptr)
-        delete j1Decision;
-    if (j2Decision!=nullptr)
-        delete j2Decision;
+    if (fuyardDecision!=nullptr)
+        delete fuyardDecision;
+    if (poursuivantDecision!=nullptr)
+        delete poursuivantDecision;
 }

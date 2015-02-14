@@ -7,15 +7,15 @@
 class Notaire
 {
 private:
-    Position* j1Decision;   //contient la décision du joueur1 pour le tour courant
-    Position* j2Decision;   //contient la décision du joueur2 pour le tour courant
+    Position* fuyardDecision;   //contient la décision du fuyard pour le tour courant
+    Position* poursuivantDecision;   //contient la décision du poursuivant pour le tour courant
 public:
     Notaire();
     ~Notaire();
-    Position getJ1Decision()const;
-    Position getJ2Decision()const;
-    void setJ1Decision(Position& p);
-    void setJ2Decision(Position& p);
+    Position getFuyardDecision()const;
+    Position getPoursuivantDecision()const;
+    void setFuyardDecision(Position& p);
+    void setPoursuivantDecision(Position& p);
     bool tourValide()const;     //retourne vrai si on a les 2 décisions, faux sinon
     void raz();     //efface les décisions enregistrées
 };
