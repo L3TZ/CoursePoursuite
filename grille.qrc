@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/new/Myresource">
+        <file>Ressources/grille.png</file>
+    </qresource>
+</RCC>
