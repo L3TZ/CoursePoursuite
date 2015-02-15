@@ -53,12 +53,7 @@ Position Poursuivant::donnerDecision(const Historique& historiqueJeu)const
     return decision;
 }
 
-void Poursuivant::setStrategiesFuyard(const std::vector<Strategie *>& tStrategiesFuyard)
-{
-    if (tStrategiesFuyard.empty())
-        throw PoursuivantExceptionAucuneStrategieFuyard("Le fuyard n'a pas de stratégie.",__LINE__);
-    this->tStrategiesFuyard=tStrategiesFuyard;
-}
+
 
 void Poursuivant::apprentissage(const Historique &historiqueJeu)
 {
