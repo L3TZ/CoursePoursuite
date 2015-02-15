@@ -7,7 +7,7 @@
 class Fuyard : public Joueur
 {
 public:
-    Fuyard();
+    Fuyard(Position pos);
 
     Position donnerDecision(const Historique& historiqueJeu)const;
 };

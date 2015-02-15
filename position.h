@@ -20,6 +20,8 @@ public:
     static std::vector<Position> cerclePosition(const Position& posPoursuivant,int distanceFuyard);
     static std::vector<Position> intersectionCercle(const std::vector<Position> cercle1, const std::vector<Position> cercle2,int rayonActionFuyard);
 
+    bool operator ==(const Position& other)const;
+    bool operator !=(const Position& other)const;
 };
 
 #endif // POSITION_H

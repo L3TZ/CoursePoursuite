@@ -4,7 +4,7 @@
 #include "Exception/poursuivantexceptionmauvaiseprofondeurhisto.h"
 #include "Exception/poursuivantexceptionapprentissageimpossible.h"
 
-Poursuivant::Poursuivant(int rayonAction,bool visibiliteFuyard,int profondeurHistorique):rayonAction(rayonAction),visibiliteFuyard(visibiliteFuyard),profondeurHistorique(profondeurHistorique)
+Poursuivant::Poursuivant(int rayonAction,bool visibiliteFuyard,int profondeurHistorique,Position pos):Joueur(pos),rayonAction(rayonAction),visibiliteFuyard(visibiliteFuyard),profondeurHistorique(profondeurHistorique)
 {
     if (rayonAction<0)
         throw PoursuivantExceptionMauvaisRayonAction("Le rayon d'action du poursuivant est incorrect (< 0).",__LINE__);
@@ -14,6 +14,9 @@ Poursuivant::Poursuivant(int rayonAction,bool visibiliteFuyard,int profondeurHis
 
 Position Poursuivant::donnerDecision(const Historique& historiqueJeu)const
 {
+    if (tStrategiesFuyard.size()==0)
+        throw PoursuivantExceptionAucuneStrategieFuyard("Le fuyard n'a pas de stratégie, impossible de décider.",__LINE__);
+
     Position decision;
 
     Position posFuyard;
@@ -26,6 +29,7 @@ Position Poursuivant::donnerDecision(const Historique& historiqueJeu)const
     Position posPoursuivantHisto;
     Position posFuyardHisto;
     int rayonActionFuyard=tStrategiesFuyard[0]->getRayonActionFuyard();
+
 
     if (visibiliteFuyard)
     {

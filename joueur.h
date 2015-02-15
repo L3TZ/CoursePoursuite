@@ -16,6 +16,7 @@ public:
 
     void setStrategiesFuyard(const std::vector<Strategie*>& tStrategiesFuyard);
     void avancer(const Position& decision);
+    Position getPosActuelle()const;
 };
 
 #endif // JOUEUR_H

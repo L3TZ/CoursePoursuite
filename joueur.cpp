@@ -21,3 +21,8 @@ void Joueur::setStrategiesFuyard(const std::vector<Strategie *>& tStrategiesFuya
         throw PoursuivantExceptionAucuneStrategieFuyard("Le fuyard n'a pas de stratégie.",__LINE__);
     this->tStrategiesFuyard=tStrategiesFuyard;
 }
+
+Position Joueur::getPosActuelle()const
+{
+    return posActuelle;
+}

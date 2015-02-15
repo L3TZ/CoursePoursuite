@@ -79,3 +79,13 @@ std::vector<Position> Position::intersectionCercle(const std::vector<Position> c
 
     return nouveauCercle;
 }
+
+bool Position::operator ==(const Position& other)const
+{
+    return (this->x==other.x && this->y==other.y);
+}
+
+bool Position::operator !=(const Position& other)const
+{
+    return !(*this==other);
+}
