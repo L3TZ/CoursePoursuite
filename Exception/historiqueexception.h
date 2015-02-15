@@ -4,6 +4,8 @@
 #include <exception>
 #include <string>
 
+using namespace std;
+
 class HistoriqueException : public exception
 {
 private:

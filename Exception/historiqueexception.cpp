@@ -1,5 +1,7 @@
 #include "historiqueexception.h"
 
+#include <sstream>
+
 HistoriqueException::HistoriqueException(const char* msg,int line)
 {
     ostringstream oss;
