@@ -33,7 +33,8 @@ SOURCES += main.cpp\
     historique.cpp \
     Exception/historiqueexception.cpp \
     Exception/historiqueexceptionhorslimites.cpp \
-    Exception/historiqueexceptionhistoriquevide.cpp
+    Exception/historiqueexceptionhistoriquevide.cpp \
+    Exception/poursuivantexceptionapprentissageimpossible.cpp
 
 HEADERS  += mainwindow.h \
     notaire.h \
@@ -53,7 +54,8 @@ HEADERS  += mainwindow.h \
     historique.h \
     Exception/historiqueexception.h \
     Exception/historiqueexceptionhorslimites.h \
-    Exception/historiqueexceptionhistoriquevide.h
+    Exception/historiqueexceptionhistoriquevide.h \
+    Exception/poursuivantexceptionapprentissageimpossible.h
 
 FORMS    += mainwindow.ui
 

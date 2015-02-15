@@ -18,7 +18,8 @@ public:
     Poursuivant(int rayonAction,bool visibiliteFuyard,int profondeurHistorique);
 
     void setStrategiesFuyard(const std::vector<Strategie*>& tStrategiesFuyard);
-    virtual Position donnerDecision(const Historique& historiqueJeu)const;
+    Position donnerDecision(const Historique& historiqueJeu)const;
+    void apprentissage(const Historique& historiqueJeu);
 };
 
 #endif // POURSUIVANT_H
