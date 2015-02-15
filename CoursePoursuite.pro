@@ -20,14 +20,20 @@ SOURCES += main.cpp\
     position.cpp \
     Exception/notaireexception.cpp \
     Exception/notaireexceptiondecisiondejavue.cpp \
-    Exception/notaireexceptionaucunedecision.cpp
+    Exception/notaireexceptionaucunedecision.cpp \
+    strategie.cpp \
+    Exception/strategieexception.cpp \
+    Exception/strategieexceptionmauvaisrayonaction.cpp
 
 HEADERS  += mainwindow.h \
     notaire.h \
     position.h \
     Exception/notaireexception.h \
     Exception/notaireexceptiondecisiondejavue.h \
-    Exception/notaireexceptionaucunedecision.h
+    Exception/notaireexceptionaucunedecision.h \
+    strategie.h \
+    Exception/strategieexception.h \
+    Exception/strategieexceptionmauvaisrayonaction.h
 
 FORMS    += mainwindow.ui
 
