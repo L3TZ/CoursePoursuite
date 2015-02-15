@@ -29,14 +29,14 @@ Position Notaire::getPoursuivantDecision()const
         throw NotaireExceptionAucuneDecision("La décision du poursuivant n'est pas encore enregistrée.",__LINE__);
 }
 
-void Notaire::setFuyardDecision(Position& p)
+void Notaire::setFuyardDecision(const Position& p)
 {
     if (fuyardDecision!=nullptr)
         throw NotaireExceptionDecisionDejaVue("La décision du fuyard est déjà enregistrée.",__LINE__);
     fuyardDecision=new Position(p);
 }
 
-void Notaire::setPoursuivantDecision(Position& p)
+void Notaire::setPoursuivantDecision(const Position& p)
 {
     if (poursuivantDecision!=nullptr)
         throw NotaireExceptionDecisionDejaVue("La décision du poursuivant est déjà enregistrée.",__LINE__);

@@ -14,8 +14,8 @@ public:
     ~Notaire();
     Position getFuyardDecision()const;
     Position getPoursuivantDecision()const;
-    void setFuyardDecision(Position& p);
-    void setPoursuivantDecision(Position& p);
+    void setFuyardDecision(const Position& p);
+    void setPoursuivantDecision(const Position& p);
     bool tourValide()const;     //retourne vrai si on a les 2 décisions, faux sinon
     void raz();     //efface les décisions enregistrées
 };

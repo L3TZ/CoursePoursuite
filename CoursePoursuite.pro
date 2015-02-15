@@ -23,7 +23,17 @@ SOURCES += main.cpp\
     Exception/notaireexceptionaucunedecision.cpp \
     strategie.cpp \
     Exception/strategieexception.cpp \
-    Exception/strategieexceptionmauvaisrayonaction.cpp
+    Exception/strategieexceptionmauvaisrayonaction.cpp \
+    joueur.cpp \
+    poursuivant.cpp \
+    Exception/poursuivantexception.cpp \
+    Exception/poursuivantexceptionaucunestrategiefuyard.cpp \
+    Exception/poursuivantexceptionmauvaisrayonaction.cpp \
+    Exception/poursuivantexceptionmauvaiseprofondeurhisto.cpp \
+    historique.cpp \
+    Exception/historiqueexception.cpp \
+    Exception/historiqueexceptionhorslimites.cpp \
+    Exception/historiqueexceptionhistoriquevide.cpp
 
 HEADERS  += mainwindow.h \
     notaire.h \
@@ -33,7 +43,17 @@ HEADERS  += mainwindow.h \
     Exception/notaireexceptionaucunedecision.h \
     strategie.h \
     Exception/strategieexception.h \
-    Exception/strategieexceptionmauvaisrayonaction.h
+    Exception/strategieexceptionmauvaisrayonaction.h \
+    joueur.h \
+    poursuivant.h \
+    Exception/poursuivantexception.h \
+    Exception/poursuivantexceptionaucunestrategiefuyard.h \
+    Exception/poursuivantexceptionmauvaisrayonaction.h \
+    Exception/poursuivantexceptionmauvaiseprofondeurhisto.h \
+    historique.h \
+    Exception/historiqueexception.h \
+    Exception/historiqueexceptionhorslimites.h \
+    Exception/historiqueexceptionhistoriquevide.h
 
 FORMS    += mainwindow.ui
 

@@ -14,9 +14,11 @@ public:
     Historique();
 
     int getNbTours()const;
-    void ajoutEntree(Position posFuyard,Position posPoursuivant);
+    void ajoutEntree(const Position& posFuyard,const Position& posPoursuivant);
     Position getPositionFuyard(int ind)const;
     Position getPositionPoursuivant(int ind)const;
+    Position getDernierePositionFuyard()const;
+    Position getDernierePositionPoursuivant()const;
 };
 
 #endif // HISTORIQUE_H
