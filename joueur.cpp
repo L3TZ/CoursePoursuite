@@ -1,5 +1,7 @@
 #include "joueur.h"
 #include "Exception/poursuivantexceptionaucunestrategiefuyard.h"
+#include "Exception/poursuivantexceptionstrategieheterogene.h"
+#include <typeinfo>
 
 Joueur::Joueur()
 {
@@ -19,6 +21,14 @@ void Joueur::setStrategiesFuyard(const std::vector<Strategie *>& tStrategiesFuya
 {
     if (tStrategiesFuyard.empty())
         throw PoursuivantExceptionAucuneStrategieFuyard("Le fuyard n'a pas de stratégie.",__LINE__);
+
+    string typeStrategie=typeid(*tStrategiesFuyard[0]).name();
+    int rayonActionFuyard=tStrategiesFuyard[0]->getRayonActionFuyard();
+    for (unsigned i=1;i<tStrategiesFuyard.size();i++)
+    {
+        if ((typeStrategie.compare(typeid(*tStrategiesFuyard[i]).name())!=0) || tStrategiesFuyard[i]->getRayonActionFuyard()!=rayonActionFuyard)
+            throw PoursuivantExceptionStrategieHeterogene("Les stratégies du fuyard sont hétérogènes.",__LINE__);
+    }
     this->tStrategiesFuyard=tStrategiesFuyard;
 }
 

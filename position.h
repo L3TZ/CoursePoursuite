@@ -16,6 +16,8 @@ public:
     void setX(int x);
     void setY(int y);
 
+    void affiche()const;
+
     static int calculDistance(const Position& posPoursuivant,const Position& posFuyard);
     static std::vector<Position> cerclePosition(const Position& posPoursuivant,int distanceFuyard);
     static std::vector<Position> intersectionCercle(const std::vector<Position> cercle1, const std::vector<Position> cercle2,int rayonActionFuyard);

@@ -17,6 +17,7 @@ public:
     Jeu(Poursuivant& p, Fuyard& f);
 
     void lancerJeu();
+
 };
 
 #endif // JEU_H

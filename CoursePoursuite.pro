@@ -36,7 +36,9 @@ SOURCES += main.cpp\
     Exception/historiqueexceptionhistoriquevide.cpp \
     Exception/poursuivantexceptionapprentissageimpossible.cpp \
     fuyard.cpp \
-    jeu.cpp
+    jeu.cpp \
+    strategietest.cpp \
+    Exception/poursuivantexceptionstrategieheterogene.cpp
 
 HEADERS  += mainwindow.h \
     notaire.h \
@@ -59,7 +61,9 @@ HEADERS  += mainwindow.h \
     Exception/historiqueexceptionhistoriquevide.h \
     Exception/poursuivantexceptionapprentissageimpossible.h \
     fuyard.h \
-    jeu.h
+    jeu.h \
+    strategietest.h \
+    Exception/poursuivantexceptionstrategieheterogene.h
 
 FORMS    += mainwindow.ui
 

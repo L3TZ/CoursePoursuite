@@ -54,7 +54,13 @@ bool Notaire::tourValide()const
 void Notaire::raz()
 {
     if (fuyardDecision!=nullptr)
+    {
         delete fuyardDecision;
+        fuyardDecision=nullptr;
+    }
     if (poursuivantDecision!=nullptr)
+    {
         delete poursuivantDecision;
+        poursuivantDecision=nullptr;
+    }
 }

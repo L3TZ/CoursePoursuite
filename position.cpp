@@ -1,5 +1,6 @@
 #include "position.h"
 #include "algorithm"
+#include <iostream>
 
 Position::Position():x(0),y(0)
 {
@@ -88,4 +89,10 @@ bool Position::operator ==(const Position& other)const
 bool Position::operator !=(const Position& other)const
 {
     return !(*this==other);
+}
+
+
+void Position::affiche()const
+{
+    std::cout<<"X : "<<x<<" Y : "<<y;
 }
