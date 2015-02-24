@@ -11,7 +11,7 @@ private:
     Position* poursuivantDecision;   //contient la décision du poursuivant pour le tour courant
 public:
     Notaire();
-    ~Notaire();
+    virtual ~Notaire();
     Position getFuyardDecision()const;
     Position getPoursuivantDecision()const;
     void setFuyardDecision(const Position& p);
