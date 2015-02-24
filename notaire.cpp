@@ -13,6 +13,14 @@ Notaire::~Notaire()
         delete poursuivantDecision;
 }
 
+Notaire::Notaire(const Notaire& notaire):fuyardDecision(nullptr),poursuivantDecision(nullptr)
+{
+    if (notaire.fuyardDecision!=nullptr)
+        this->fuyardDecision=new Position(*notaire.fuyardDecision);
+    if (notaire.poursuivantDecision!=nullptr)
+        this->poursuivantDecision=new Position(*notaire.poursuivantDecision);
+}
+
 Position Notaire::getFuyardDecision()const
 {
     if (fuyardDecision!=nullptr)
@@ -63,4 +71,16 @@ void Notaire::raz()
         delete poursuivantDecision;
         poursuivantDecision=nullptr;
     }
+}
+
+Notaire& Notaire::operator =(const Notaire& notaire)
+{
+    this->raz();
+
+    if (notaire.fuyardDecision!=nullptr)
+        this->fuyardDecision=new Position(*notaire.fuyardDecision);
+    if (notaire.poursuivantDecision!=nullptr)
+        this->poursuivantDecision=new Position(*notaire.poursuivantDecision);
+
+    return *this;
 }

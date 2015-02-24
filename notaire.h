@@ -11,6 +11,7 @@ private:
     Position* poursuivantDecision;   //contient la décision du poursuivant pour le tour courant
 public:
     Notaire();
+    Notaire(const Notaire& notaire);
     virtual ~Notaire();
     Position getFuyardDecision()const;
     Position getPoursuivantDecision()const;
@@ -18,6 +19,8 @@ public:
     void setPoursuivantDecision(const Position& p);
     bool tourValide()const;     //retourne vrai si on a les 2 décisions, faux sinon
     void raz();     //efface les décisions enregistrées
+
+    Notaire& operator=(const Notaire& notaire);
 };
 
 #endif // NOTAIRE_H
