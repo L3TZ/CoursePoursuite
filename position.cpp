@@ -81,6 +81,28 @@ std::vector<Position> Position::intersectionCercle(const std::vector<Position> c
     return nouveauCercle;
 }
 
+Position Position::reductionRayonAction(const Position &posActuelle, const Position &posCible, int rayonAction)
+{
+    if (rayonAction==0 || calculDistance(posActuelle,posCible)<=rayonAction)
+        return posCible;
+
+    std::vector<Position> posPossibles=cerclePosition(posActuelle,rayonAction);
+    Position meilleurePos=posPossibles[0];
+    int meilleureDistance=calculDistance(posPossibles[0],posCible);
+    int distanceTmp;
+
+    for (unsigned int i=1;i<posPossibles.size();i++)
+    {
+        distanceTmp=calculDistance(posPossibles[i],posCible);
+        if (distanceTmp<meilleureDistance)
+        {
+            meilleurePos=posPossibles[i];
+            meilleureDistance=distanceTmp;
+        }
+    }
+    return meilleurePos;
+}
+
 bool Position::operator ==(const Position& other)const
 {
     return (this->x==other.x && this->y==other.y);

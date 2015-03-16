@@ -38,7 +38,8 @@ SOURCES += main.cpp\
     fuyard.cpp \
     jeu.cpp \
     strategietest.cpp \
-    Exception/poursuivantexceptionstrategieheterogene.cpp
+    Exception/poursuivantexceptionstrategieheterogene.cpp \
+    strategiequart.cpp
 
 HEADERS  += mainwindow.h \
     notaire.h \
@@ -63,7 +64,8 @@ HEADERS  += mainwindow.h \
     fuyard.h \
     jeu.h \
     strategietest.h \
-    Exception/poursuivantexceptionstrategieheterogene.h
+    Exception/poursuivantexceptionstrategieheterogene.h \
+    strategiequart.h
 
 FORMS    += mainwindow.ui
 

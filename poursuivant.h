@@ -31,7 +31,7 @@ public:
          *
          *  Constructeur de la classe Poursuivant
          *
-         * \param rayonAction : le rayon d'action du poursuivant
+         * \param rayonAction : le rayon d'action du poursuivant (0 si illimité)
          * \param visibiliteFuyard : true si le poursuivant connait la position exacte du fuyard, false sinon
          * \param pos : la position de départ du poursuivant
          */

@@ -115,7 +115,19 @@ public:
         *
         */
     static std::vector<Position> intersectionCercle(const std::vector<Position> cercle1, const std::vector<Position> cercle2,int rayonActionFuyard);
-
+    /*!
+        *  \brief Méthode statique de calcul d'une position en fonction du rayon d'action
+        *
+        *   calcule une position en fonction de la position actuelle, d'une position cible et du rayon d'action.
+        * Utilisée dans le cas ou le poursuivant a un rayon d'action limité
+        *
+        * \param posActuelle : position actuelle du poursuivant
+        * \param posCible : position que le poursuivant voudrait atteindre
+        * \param rayonAction : le rayon d'action du poursuivant
+        * \return la position que le poursuivant a le droit d'atteindre en direction de la position cible
+        *
+        */
+    static Position reductionRayonAction(const Position& posActuelle,const Position& posCible,int rayonAction);
     /*!
         *  \brief opérateur d'égalité
         *

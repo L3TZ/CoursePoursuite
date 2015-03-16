@@ -22,7 +22,7 @@ void Jeu::lancerJeu()
     {
         cout<<"P : [";
         posP.affiche();
-        cout<<"]"<<endl;
+        cout<<"]   ";
         cout<<"F : [";
         posF.affiche();
         cout<<"]"<<endl;
@@ -46,7 +46,7 @@ void Jeu::lancerJeu()
 
     cout<<"P : [";
     posP.affiche();
-    cout<<"]"<<endl;
+    cout<<"]   ";
     cout<<"F : [";
     posF.affiche();
     cout<<"]"<<endl;

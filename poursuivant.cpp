@@ -79,14 +79,14 @@ void Poursuivant::apprentissage(const Historique &historiqueJeu)
 
     if (visibiliteFuyard)
     {
-        dernierePosPoursuivant=historiqueJeu.getPositionPoursuivant(profondeurHistoriqueReelle-1);
-        dernierePosFuyard=historiqueJeu.getPositionFuyard(profondeurHistoriqueReelle-1);
+        dernierePosPoursuivant=historiqueJeu.getPositionPoursuivant(profondeurHistoriqueReelle-2);
+        dernierePosFuyard=historiqueJeu.getPositionFuyard(profondeurHistoriqueReelle-2);
         nouvellePosFuyard=historiqueJeu.getDernierePositionFuyard();
         tStrategiesFuyard[0]->apprentissagePoursuivant(tStrategiesDecouvertes,tStrategiesFuyard,dernierePosPoursuivant,dernierePosFuyard,nouvellePosFuyard);
     }
     else
     {
-        dernierePosPoursuivant=historiqueJeu.getPositionPoursuivant(profondeurHistoriqueReelle-1);
+        dernierePosPoursuivant=historiqueJeu.getPositionPoursuivant(profondeurHistoriqueReelle-2);
         indiceHistorique=profondeurHistoriqueReelle-profondeurHistorique;
         if (indiceHistorique<0 || profondeurHistorique==0)
             indiceHistorique=0;
