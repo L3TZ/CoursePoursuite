@@ -9,5 +9,6 @@ var annotated =
     [ "Position", "class_position.html", "class_position" ],
     [ "Poursuivant", "class_poursuivant.html", "class_poursuivant" ],
     [ "Strategie", "class_strategie.html", "class_strategie" ],
+    [ "StrategieQuart", "class_strategie_quart.html", "class_strategie_quart" ],
     [ "StrategieTest", "class_strategie_test.html", "class_strategie_test" ]
 ];

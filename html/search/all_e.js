@@ -7,5 +7,6 @@ var searchData=
   ['sety',['setY',['../class_position.html#a473274f1a3e4888f9c5e3eba0889a1ab',1,'Position']]],
   ['strategie',['Strategie',['../class_strategie.html',1,'Strategie'],['../class_strategie.html#abd2acd11f569eb890e02852806c4932a',1,'Strategie::Strategie()']]],
   ['strategie_2eh',['strategie.h',['../strategie_8h.html',1,'']]],
+  ['strategiequart',['StrategieQuart',['../class_strategie_quart.html',1,'']]],
   ['strategietest',['StrategieTest',['../class_strategie_test.html',1,'']]]
 ];

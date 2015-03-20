@@ -156,6 +156,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a13aaa96166f6a438cdeb700b32403c3f"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position.html#a13aaa96166f6a438cdeb700b32403c3f">intersectionCercle</a> (const std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; cercle1, const std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; cercle2, int rayonActionFuyard)</td></tr>
 <tr class="memdesc:a13aaa96166f6a438cdeb700b32403c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode statique de calcul de l'intersection de 2 cercles de <a class="el" href="class_position.html" title="classe representant la Position d&#39;un joueur ">Position</a>.  <a href="#a13aaa96166f6a438cdeb700b32403c3f">More...</a><br/></td></tr>
 <tr class="separator:a13aaa96166f6a438cdeb700b32403c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94481efd4a8d728a2902ef986ffa86ed"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_position.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position.html#a94481efd4a8d728a2902ef986ffa86ed">reductionRayonAction</a> (const <a class="el" href="class_position.html">Position</a> &amp;posActuelle, const <a class="el" href="class_position.html">Position</a> &amp;posCible, int rayonAction)</td></tr>
+<tr class="memdesc:a94481efd4a8d728a2902ef986ffa86ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode statique de calcul d'une position en fonction du rayon d'action.  <a href="#a94481efd4a8d728a2902ef986ffa86ed">More...</a><br/></td></tr>
+<tr class="separator:a94481efd4a8d728a2902ef986ffa86ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>classe representant la <a class="el" href="class_position.html" title="classe representant la Position d&#39;un joueur ">Position</a> d'un joueur </p>
@@ -461,6 +464,58 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a94481efd4a8d728a2902ef986ffa86ed"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_position.html">Position</a> Position::reductionRayonAction </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>posActuelle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>posCible</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rayonAction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Méthode statique de calcul d'une position en fonction du rayon d'action. </p>
+<p>calcule une position en fonction de la position actuelle, d'une position cible et du rayon d'action. Utilisée dans le cas ou le poursuivant a un rayon d'action limité</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">posActuelle</td><td>: position actuelle du poursuivant </td></tr>
+    <tr><td class="paramname">posCible</td><td>: position que le poursuivant voudrait atteindre </td></tr>
+    <tr><td class="paramname">rayonAction</td><td>: le rayon d'action du poursuivant </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>la position que le poursuivant a le droit d'atteindre en direction de la position cible </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ad46bb77324e2d9538e15f1a25320f1ff"></a>
 <div class="memitem">
 <div class="memproto">
@@ -510,8 +565,8 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>CoursePoursuite/<a class="el" href="position_8h_source.html">position.h</a></li>
-<li>CoursePoursuite/position.cpp</li>
+<li>/Users/Stav/Documents/Fac/M1 S8/Projet/CoursePoursuite/<a class="el" href="position_8h_source.html">position.h</a></li>
+<li>/Users/Stav/Documents/Fac/M1 S8/Projet/CoursePoursuite/position.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -519,7 +574,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_position.html">Position</a></li>
-    <li class="footer">Generated on Tue Mar 3 2015 14:28:58 for Course Poursuite by
+    <li class="footer">Generated on Fri Mar 20 2015 13:01:14 for Course Poursuite by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
