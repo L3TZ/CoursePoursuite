@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 
 
     Jeu jeu(P,F);
-    jeu.lancerJeu();
+    jeu.lancerJeu(w);
 
     return a.exec();
 }
