@@ -43,8 +43,9 @@ private slots:
         *
         */
     void tourSuivant();
-    void affichePosition(Position P, Position F);
-
+    void majLabGrillePositionsF();
+    void majLabGrillePositionsP();
+    void majGrilleJeuTermine(Position p);
 };
 
 #endif // MAINWINDOW_H
