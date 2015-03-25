@@ -7,8 +7,8 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+  //  MainWindow w;
+  //  w.show();
 
     Poursuivant P(2,true,0,Position(5,25));
     Fuyard F(Position(10,10));
@@ -36,12 +36,16 @@ int main(int argc, char *argv[])
     P.setStrategiesFuyard(tStrat);
     F.setStrategiesFuyard(tStrat);
 
-    Jeu jeu(P,F);
+    //Jeu jeu(P,F);
+
+    MainWindow w(P,F);
+    w.show();
+
 
     //QObject::connect(w.ui->boutonTourSuiv,SIGNAL(pressed()),jeu.tourSuivant());
 
 
-    jeu.lancerJeu();
+//    jeu.lancerJeu();
 
     return a.exec();
 }

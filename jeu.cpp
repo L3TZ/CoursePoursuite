@@ -3,15 +3,9 @@
 
 using namespace std;
 
-/*
+
 Jeu::Jeu(Poursuivant& p,Fuyard& f):P(p),F(f),N(),histo()
 {
-}
-*/
-
-Jeu::Jeu(Poursuivant p, Fuyard f, QObject *parent) : P(p),F(f),QObject(parent),N(),histo(){
-}
-Jeu::~Jeu(){
 }
 
 void Jeu::lancerJeu()
