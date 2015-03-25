@@ -3,11 +3,18 @@
 
 using namespace std;
 
+/*
 Jeu::Jeu(Poursuivant& p,Fuyard& f):P(p),F(f),N(),histo()
 {
 }
+*/
 
-void Jeu::lancerJeu(MainWindow& w)
+Jeu::Jeu(Poursuivant p, Fuyard f, QObject *parent) : P(p),F(f),QObject(parent),N(),histo(){
+}
+Jeu::~Jeu(){
+}
+
+void Jeu::lancerJeu()
 {
     Position posP=P.getPosActuelle();
     Position posF=F.getPosActuelle();
@@ -26,7 +33,7 @@ void Jeu::lancerJeu(MainWindow& w)
     cout<<"]"<<endl;
 
 
-    while(posP!=posF){
+   // while(posP!=posF){
         this->tourSuivant();
 
         posP=P.getPosActuelle();
@@ -38,7 +45,7 @@ void Jeu::lancerJeu(MainWindow& w)
         cout<<"F : [";
         posF.affiche();
         cout<<"]"<<endl;
-    }
+  //  }
 
 }
 
@@ -59,3 +66,10 @@ void Jeu::tourSuivant(){
     }
 }
 
+Position Jeu::getPositionF(){
+    return this->F.getPosActuelle();
+}
+
+Position Jeu::getPositionP(){
+    return this->P.getPosActuelle();
+}

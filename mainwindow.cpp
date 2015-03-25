@@ -13,7 +13,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_bouttonTerminer_clicked()
+void MainWindow::on_boutonTerminer_clicked()
 {
     close();
 }

@@ -9,15 +9,17 @@
 #ifndef JEU_H
 #define JEU_H
 
-#include "poursuivant.h"
-#include "fuyard.h"
-#include "mainwindow.h"
-#include "notaire.h"
-#include "historique.h"
 #include <QObject>
 
-class Jeu
+#include "poursuivant.h"
+#include "fuyard.h"
+#include "notaire.h"
+#include "historique.h"
+
+
+class Jeu : QObject
 {
+    Q_OBJECT
 
     /*! \class Jeu
        * \brief classe representant le Jeu
@@ -26,12 +28,17 @@ class Jeu
 private:
     Poursuivant P; /*!< Poursuivant du jeu*/
     Fuyard F; /*!< Fuyard du jeu*/
-  //  MainWindow W; /*!< Fenêtre principale*/
     Notaire N; /*!< Notaire du jeu*/
     Historique histo; /*!< Historique du jeu*/
 
 public:
-    /*!
+
+    Jeu(Poursuivant p, Fuyard f, QObject *parent = 0);
+    ~Jeu();
+    Position getPositionF();
+    Position getPositionP();
+
+    /*  !
          *  \brief Constructeur
          *
          *  Constructeur de la classe Jeu
@@ -40,7 +47,7 @@ public:
          * \param f : un fuyard
          * \param w : la fenêtre principale
          */
-    Jeu(Poursuivant& p, Fuyard& f);
+  //  Jeu(Poursuivant& p, Fuyard& f);
 
     /*!
         *  \brief Démarrer le jeu
@@ -48,8 +55,9 @@ public:
         *  Methode qui permet de lancer l'exécution du jeu
         *
         */
-    void lancerJeu(MainWindow& w);
+    void lancerJeu();
 
+public slots:
     /*!
         *  \brief Passer au prochain tour
         *

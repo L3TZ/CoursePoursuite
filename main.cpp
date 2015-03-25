@@ -36,9 +36,12 @@ int main(int argc, char *argv[])
     P.setStrategiesFuyard(tStrat);
     F.setStrategiesFuyard(tStrat);
 
-
     Jeu jeu(P,F);
-    jeu.lancerJeu(w);
+
+    //QObject::connect(w.ui->boutonTourSuiv,SIGNAL(pressed()),jeu.tourSuivant());
+
+
+    jeu.lancerJeu();
 
     return a.exec();
 }
