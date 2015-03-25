@@ -43,6 +43,7 @@ private slots:
         *
         */
     void tourSuivant();
+    void affichePosition(Position P, Position F);
 
 };
 

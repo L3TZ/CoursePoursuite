@@ -25,6 +25,8 @@ void MainWindow::lancerJeu()
     Position posP=P.getPosActuelle();
     Position posF=F.getPosActuelle();
 
+    affichePosition(posP,posF);
+
     histo.ajoutEntree(posF,posP);
 /*
     Position decisionP;
@@ -81,6 +83,16 @@ void MainWindow::tourSuivant(){
     posF.affiche();
     cout<<"]"<<endl;
 
+    affichePosition(posP,posF);
+}
+
+
+void MainWindow::on_boutonTerminer_clicked()
+{
+    close();
+}
+
+void MainWindow::affichePosition(Position posP, Position posF){
     //Affichage position du poursuivant
     int xP=posP.getX(); int yP=posP.getY();
     QString positionP="X :"+QString::number(xP)+" Y :"+ QString::number(yP);
@@ -92,8 +104,3 @@ void MainWindow::tourSuivant(){
     ui->labelPosF->setText(positionF);
 }
 
-
-void MainWindow::on_boutonTerminer_clicked()
-{
-    close();
-}
