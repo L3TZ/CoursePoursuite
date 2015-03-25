@@ -80,6 +80,16 @@ void MainWindow::tourSuivant(){
     cout<<"F : [";
     posF.affiche();
     cout<<"]"<<endl;
+
+    //Affichage position du poursuivant
+    int xP=posP.getX(); int yP=posP.getY();
+    QString positionP="X :"+QString::number(xP)+" Y :"+ QString::number(yP);
+    ui->labelPosP->setText(positionP);
+
+    //Affichage position du fuyard
+    int xF=posF.getX(); int yF=posF.getY();
+    QString positionF="X :"+QString::number(xF)+" Y :"+ QString::number(yF);
+    ui->labelPosF->setText(positionF);
 }
 
 
