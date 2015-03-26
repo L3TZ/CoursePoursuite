@@ -1,14 +1,13 @@
-#include "mainwindow.h"
 #include <QApplication>
-
-#include "jeu.h"
+#include <QDesktopWidget>
+#include <QRect>
+#include "mainwindow.h"
+//#include "jeu.h"
 #include "strategiequart.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-  //  MainWindow w;
-  //  w.show();
 
     Poursuivant P(2,true,0,Position(5,25));
     Fuyard F(Position(10,10));
@@ -36,9 +35,13 @@ int main(int argc, char *argv[])
     P.setStrategiesFuyard(tStrat);
     F.setStrategiesFuyard(tStrat);
 
-    //Jeu jeu(P,F);
-
     MainWindow w(P,F);
+    QDesktopWidget bureau;
+    QRect surface_bureau = bureau.screenGeometry();
+    int x = surface_bureau.width()/2 - w.width()/2;
+    int y = surface_bureau.height()/2 - w.height()/2;
+    w.move(x/2.5,y/3.5);
+
     w.show();
 
 

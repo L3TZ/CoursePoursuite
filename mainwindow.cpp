@@ -69,6 +69,7 @@ void MainWindow::tourSuivant(){
         posF.affiche();
         cout<<"]"<<endl;
 
+        //Appeler F avant P car clean de la grille
         majLabGrillePositionsF();
         majLabGrillePositionsP();
         majLabTour();
