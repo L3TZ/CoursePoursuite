@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>593</width>
-    <height>469</height>
+    <width>608</width>
+    <height>565</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,43 +20,39 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>260</y>
-      <width>71</width>
+      <x>150</x>
+      <y>280</y>
+      <width>41</width>
       <height>21</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+      <underline>true</underline>
+     </font>
+    </property>
     <property name="text">
-     <string>Infos Fuyard</string>
+     <string>Fuyard</string>
     </property>
    </widget>
    <widget class="QLabel" name="labelP">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>260</y>
-      <width>91</width>
+      <x>390</x>
+      <y>280</y>
+      <width>71</width>
       <height>20</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Infos Poursuivant</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="boutonTourSuiv">
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>390</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+      <underline>true</underline>
+     </font>
     </property>
     <property name="text">
-     <string>Tour Suivant</string>
-    </property>
-    <property name="checkable">
-     <bool>true</bool>
+     <string>Poursuivant</string>
     </property>
    </widget>
    <widget class="QTableWidget" name="grille">
@@ -227,65 +223,27 @@
     <column/>
     <column/>
    </widget>
-   <widget class="QPushButton" name="boutonTerminer">
+   <widget class="QPushButton" name="boutonQuitter">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>390</y>
+      <x>510</x>
+      <y>495</y>
       <width>75</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>Terminer</string>
+     <string>QUITTER</string>
     </property>
     <property name="checkable">
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QTextBrowser" name="textFuyard">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>290</y>
-      <width>111</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="html">
-     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Position :&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Stratégie utilisée :&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;..&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QTextBrowser" name="textPoursuivant">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>290</y>
-      <width>101</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="html">
-     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Position :&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Stratégie utilisée :&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;..&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="labelPosF">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>290</y>
+      <x>180</x>
+      <y>314</y>
       <width>61</width>
       <height>16</height>
      </rect>
@@ -297,40 +255,201 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="labelStratF">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>310</y>
-      <width>47</width>
-      <height>13</height>
+      <x>180</x>
+      <y>330</y>
+      <width>81</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Strat F</string>
+     <string>nom stratégie F</string>
     </property>
    </widget>
    <widget class="QLabel" name="labelPosP">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>290</y>
+      <x>440</x>
+      <y>314</y>
       <width>61</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Position p</string>
+     <string>Position P</string>
     </property>
    </widget>
    <widget class="QLabel" name="labelStratP">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>310</y>
-      <width>47</width>
-      <height>13</height>
+      <x>440</x>
+      <y>330</y>
+      <width>81</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Strat P</string>
+     <string>nom stratégie P</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelNumTour">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>435</y>
+      <width>41</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelTour">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>435</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Tour n° :</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="boutonTourSuiv">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>435</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Tour Suivant</string>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="boutonFinirPartie">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>430</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Terminer Partie</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="nom_positionF">
+    <property name="geometry">
+     <rect>
+      <x>113</x>
+      <y>314</y>
+      <width>47</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Position :</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="nom_positionP">
+    <property name="geometry">
+     <rect>
+      <x>363</x>
+      <y>314</y>
+      <width>47</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Position :</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="nom_stratP">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>330</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Stratégie utilisée :</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="nom_stratF">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>330</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Stratégie utilisée :</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>280</y>
+      <width>21</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="sizeIncrement">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>283</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: blue</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="graphicsView_2">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>283</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: red</string>
     </property>
    </widget>
   </widget>
@@ -339,7 +458,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>593</width>
+     <width>608</width>
      <height>21</height>
     </rect>
    </property>

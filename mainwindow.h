@@ -35,7 +35,7 @@ private:
     Historique histo; /*!< Historique du jeu*/
 
 private slots:
-    void on_boutonTerminer_clicked();
+    void on_boutonQuitter_clicked();
     /*!
         *  \brief Passer au prochain tour
         *
@@ -43,8 +43,10 @@ private slots:
         *
         */
     void tourSuivant();
+    void terminerPartie();
     void majLabGrillePositionsF();
     void majLabGrillePositionsP();
+    void majLabTour();
     void majGrilleJeuTermine(Position p);
 };
 
