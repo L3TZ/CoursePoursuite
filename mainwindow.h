@@ -2,8 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "poursuivant.h"
-#include "fuyard.h"
+#include "jeu.h"
 #include "notaire.h"
 #include "historique.h"
 
@@ -29,10 +28,7 @@ public:
 
 private:
     Ui::MainWindow *ui; /*!< Interface graphique*/
-    Poursuivant P; /*!< Poursuivant du jeu*/
-    Fuyard F; /*!< Fuyard du jeu*/
-    Notaire N; /*!< Notaire du jeu*/
-    Historique histo; /*!< Historique du jeu*/
+    Jeu jeu;
 
 private slots:
     void on_boutonQuitter_clicked();
@@ -43,11 +39,21 @@ private slots:
         *
         */
     void tourSuivant();
+    /*!
+        *  \brief Terminer la partie
+        *
+        *  Methode qui permet de dérouler toute la partie
+        *
+        */
     void terminerPartie();
-    void majLabGrillePositionsF();
-    void majLabGrillePositionsP();
-    void majLabTour();
-    void majGrilleJeuTermine(Position p);
+    /*!
+        *  \brief Mettre à jour la grille
+        *
+        *  Methode qui permet de mettre à jour la grille avec les positions
+        * des joueurs et le numéro du tour en cours
+        *
+        */
+    void majPositionGrille();
 };
 
 #endif // MAINWINDOW_H
