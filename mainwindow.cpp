@@ -50,9 +50,10 @@ void MainWindow::majPositionGrille(){
     ui->grille->clearContents();
     ui->labelNumTour->setText(nTour);
 
+    ui->labelPosF->setText(positionF);
+    ui->labelPosP->setText(positionP);
+
     if (xF != xP || yF != yP){
-        ui->labelPosF->setText(positionF);
-        ui->labelPosP->setText(positionP);
 
         ui->grille->setItem(xF,yF,new QTableWidgetItem);
         ui->grille->item(xF,yF)->setBackground(Qt::blue);
