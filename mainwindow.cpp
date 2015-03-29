@@ -28,13 +28,11 @@ void MainWindow::lancerJeu()
 }
 
 void MainWindow::tourSuivant(){
-    majHisto();
     jeu.tourSuivant();
     majPositionGrille();
 }
 
 void MainWindow::terminerPartie(){
-    majHisto();
     jeu.terminerPartie();
     majPositionGrille();
 }
@@ -70,53 +68,56 @@ void MainWindow::majPositionGrille(){
         ui->grille->setItem(xF,yF,new QTableWidgetItem);
         ui->grille->item(xF,yF)->setBackground(Qt::green);
     }
+
+    majHisto();
 }
 
 void MainWindow::majHisto(){
     Historique histo = jeu.getHistorique();
-    Position lastPosP= histo.getDernierePositionPoursuivant();
-    Position lastPosF=histo.getDernierePositionFuyard();
 
-    int xP=lastPosP.getX(); int yP=lastPosP.getY();
-    int xF=lastPosF.getX();int yF=lastPosF.getY();
+    ui->histoF->clear();
+    ui->histoP->clear();
 
-    QString dernierePositionP="X:"+ QString::number(xP)+ ", Y:"+ QString::number(yP);
-    ui->histoP->addItem(dernierePositionP);
-    QString dernierePositionF="X:"+ QString::number(xF)+ ", Y:"+ QString::number(yF);
-    ui->histoF->addItem(dernierePositionF);
+    for (int i = 0; i < histo.getNbTours(); i++){
+        Position posP= histo.getPositionPoursuivant(i);
+        Position posF=histo.getPositionFuyard(i);
+
+        int xP=posP.getX(); int yP=posP.getY();
+        int xF=posF.getX();int yF=posF.getY();
+
+        QString dernierePositionP="X:"+ QString::number(xP)+ ", Y:"+ QString::number(yP);
+        ui->histoP->addItem(dernierePositionP);
+        QString dernierePositionF="X:"+ QString::number(xF)+ ", Y:"+ QString::number(yF);
+        ui->histoF->addItem(dernierePositionF);
+    }
 }
 
 void MainWindow::clickOnHistoP()
 {
      //Récupération de l'index sur lequel l'utilisateur click
     int currentIndex=ui->histoP->currentRow();
-    QString texte = ui->histoP->item(currentIndex)->text();
-    //Appel de la méthode pour l'affichage avec le texte et une couleur
-    affichePositionHisto(texte,(QColor(255, 0, 0, 100)));
+
+    Historique histo = jeu.getHistorique();
+    Position posP = histo.getPositionPoursuivant(currentIndex);
+
+    //Affichage de la position demandé
+    ui->grille->clearContents(); //On efface la grille
+    majPositionGrille(); //On réaffiche les positions actuelles de P et F
+    ui->grille->setItem(posP.getX(),posP.getY(),new QTableWidgetItem);
+    ui->grille->item(posP.getX(),posP.getY())->setBackground(QColor(255, 0, 0, 100));
 }
 
 void MainWindow::clickOnHistoF()
 {
     //Récupération de l'index sur lequel l'utilisateur click
     int currentIndex=ui->histoF->currentRow();
-    QString texte = ui->histoF->item(currentIndex)->text();
-    //Appel de la méthode pour l'affichage avec le texte et une couleur
-    affichePositionHisto(texte,QColor(0,0,255,100));
-}
 
-void MainWindow::affichePositionHisto(QString texte, QColor color){
-
-    //Récupération du X
-    QString x0=texte.section(':',1,1);
-    QString x1=x0.section(",",0,0);
-
-    //Récupération du Y
-    QString y0=texte.section(':',2,2);
-    QString y1=y0.section(",",0,0);
+    Historique histo = jeu.getHistorique();
+    Position posF = histo.getPositionFuyard(currentIndex);
 
     //Affichage de la position demandé
     ui->grille->clearContents(); //On efface la grille
     majPositionGrille(); //On réaffiche les positions actuelles de P et F
-    ui->grille->setItem(x1.toInt(),y1.toInt(),new QTableWidgetItem);
-    ui->grille->item(x1.toInt(),y1.toInt())->setBackground(color);
+    ui->grille->setItem(posF.getX(),posF.getY(),new QTableWidgetItem);
+    ui->grille->item(posF.getX(),posF.getY())->setBackground(QColor(0,0,255,100));
 }

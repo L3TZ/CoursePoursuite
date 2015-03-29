@@ -61,25 +61,19 @@ private slots:
         */
     void majHisto();
     /*!
-        *  \brief Intialise les paramètres pour l'affichage d'une ancienne position de P
+        *  \brief Affiche une ancienne position de P
         *
-        *  Methode qui permet d'initialiser les paramètres pour l'affichage d'un ancienne position de P lorsque
+        *  Methode qui permet d'afficher une ancienne position de P lorsque
         * l'utilisateur click dessus.
         */
     void clickOnHistoP();
     /*!
         *  \brief Intialise les paramètres pour l'affichage d'une ancienne position de F
         *
-        *  Methode qui permet d'initialiser les paramètres pour l'affichage d'un ancienne position de F lorsque
+        *  Methode qui permet d'afficher une ancienne position de F lorsque
         * l'utilisateur click dessus
         */
     void clickOnHistoF();
-    /*!
-        *  \brief Afficher une ancienne position de F et P
-        *
-        *  Methode qui permet d'afficher une ancienne position de F ou de P sur la grille
-        */
-    void affichePositionHisto(QString texte,QColor color);
 };
 
 #endif // MAINWINDOW_H
