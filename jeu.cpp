@@ -3,9 +3,9 @@
 
 using namespace std;
 
+
 Jeu::Jeu(Poursuivant& p,Fuyard& f):P(p),F(f),N(),histo()
 {
-
 }
 
 void Jeu::lancerJeu()
@@ -15,20 +15,20 @@ void Jeu::lancerJeu()
 
     histo.ajoutEntree(posF,posP);
 
-    Position decisionP;
-    Position decisionF;
+    cout<<"P : [";
+    posP.affiche();
+    cout<<"]"<<endl;
+    cout<<"F : [";
+    posF.affiche();
+    cout<<"]"<<endl;
 
-    while (posP!=posF)
-    {
-        cout<<"P : [";
-        posP.affiche();
-        cout<<"]   ";
-        cout<<"F : [";
-        posF.affiche();
-        cout<<"]"<<endl;
+}
 
-        decisionP=P.donnerDecision(histo);
-        decisionF=F.donnerDecision(histo);
+void Jeu::tourSuivant(){
+    if (P.getPosActuelle() != F.getPosActuelle()) {
+
+        Position decisionP=P.donnerDecision(histo);
+        Position decisionF=F.donnerDecision(histo);
         N.setFuyardDecision(decisionF);
         N.setPoursuivantDecision(decisionP);
 
@@ -40,14 +40,41 @@ void Jeu::lancerJeu()
             P.apprentissage(histo);
             N.raz();
         }
+        Position posP=P.getPosActuelle();
+        Position posF=F.getPosActuelle();
+
+        cout<<"P : [";
+        posP.affiche();
+        cout<<"]"<<endl;
+        cout<<"F : [";
+        posF.affiche();
+        cout<<"]"<<endl;
+    } else {
+        cout<<"Jeu terminé"<<endl;
+    }
+}
+
+void Jeu::terminerPartie(){
+    Position posP=P.getPosActuelle();
+    Position posF=F.getPosActuelle();
+    int cpt=0; //variable pour éviter une boucle infinie
+
+    while(posP!=posF && cpt<1000){
+        this->tourSuivant();
         posP=P.getPosActuelle();
         posF=F.getPosActuelle();
+        cpt++;
     }
+}
 
-    cout<<"P : [";
-    posP.affiche();
-    cout<<"]   ";
-    cout<<"F : [";
-    posF.affiche();
-    cout<<"]"<<endl;
+Poursuivant Jeu::getPoursuivant()const{
+    return this->P;
+}
+
+Fuyard Jeu::getFuyard()const{
+    return this->F;
+}
+
+Historique Jeu::getHistorique()const{
+    return this->histo;
 }
