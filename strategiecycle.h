@@ -8,11 +8,11 @@ class StrategieCycle : public Strategie
 private:
     const int ajoutX;
     const int ajoutY;
-    static const int longueurCycle=4;
+    int longueurCycle;
     static int compteurMouvements;
 
 public:
-    StrategieCycle(int rayonActionFuyard,int ajoutX,int ajoutY);
+    StrategieCycle(int rayonActionFuyard,int ajoutX,int ajoutY,int longueurCycle);
 
     bool correspondancePosition(int numeroStrategie)const;
     Position calculNouvellePosition(const Position& posFuyard)const;

@@ -49,7 +49,7 @@ Position StrategieQuart::decisionPoursuivant(const std::vector<Strategie *> &tSt
             return Position::reductionRayonAction(posPoursuivant,dynamic_cast<StrategieQuart*>(tStrategiesDecouvertes[i])->calculNouvellePosition(posFuyard),rayonActionPoursuivant);
         }
     }
-    return posFuyard;
+    return Position::reductionRayonAction(posPoursuivant,posFuyard,rayonActionPoursuivant);
 }
 
 void StrategieQuart::apprentissagePoursuivant(std::vector<Strategie *> &tStrategiesDecouvertes, const std::vector<Strategie *> &tStrategiesFuyard, const Position &dernierePosPoursuivant, const Position &dernierePosFuyard, const Position &nouvellePosFuyard) const

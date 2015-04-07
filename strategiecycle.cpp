@@ -1,9 +1,11 @@
 #include "strategiecycle.h"
 #include <iostream>
 
+#include "typeinfo"
+
 int StrategieCycle::compteurMouvements(0);
 
-StrategieCycle::StrategieCycle(int rayonActionFuyard, int ajoutX, int ajoutY):Strategie(rayonActionFuyard),ajoutX(ajoutX),ajoutY(ajoutY)
+StrategieCycle::StrategieCycle(int rayonActionFuyard, int ajoutX, int ajoutY,int longueurCycle):Strategie(rayonActionFuyard),ajoutX(ajoutX),ajoutY(ajoutY),longueurCycle(longueurCycle)
 {
 
 }
@@ -37,14 +39,16 @@ Position StrategieCycle::decisionFuyard(const std::vector<Strategie *> &tStrateg
 
 Position StrategieCycle::decisionPoursuivant(const std::vector<Strategie *> &tStrategiesDecouvertes, const Position &posFuyard, const Position &posPoursuivant, int rayonActionPoursuivant) const
 {
+    StrategieCycle* stratTmp;
     for (unsigned int i=0;i<tStrategiesDecouvertes.size();i++)
     {
-        if (dynamic_cast<StrategieCycle*>(tStrategiesDecouvertes[i])->correspondancePosition(i))
+        stratTmp = dynamic_cast<StrategieCycle*>(tStrategiesDecouvertes[i]);
+        if (stratTmp->correspondancePosition(i))
         {
-            return Position::reductionRayonAction(posPoursuivant,dynamic_cast<StrategieCycle*>(tStrategiesDecouvertes[i])->calculNouvellePosition(posFuyard),rayonActionPoursuivant);
+            return Position::reductionRayonAction(posPoursuivant,stratTmp->calculNouvellePosition(posFuyard),rayonActionPoursuivant);
         }
     }
-    return posFuyard;
+    return Position::reductionRayonAction(posPoursuivant,posFuyard,rayonActionPoursuivant);;
 }
 
 void StrategieCycle::apprentissagePoursuivant(std::vector<Strategie *> &tStrategiesDecouvertes, const std::vector<Strategie *> &tStrategiesFuyard, const Position &dernierePosPoursuivant, const Position &dernierePosFuyard, const Position &nouvellePosFuyard) const
@@ -53,8 +57,12 @@ void StrategieCycle::apprentissagePoursuivant(std::vector<Strategie *> &tStrateg
     {
         return ;
     }
-
-    tStrategiesDecouvertes.push_back(tStrategiesFuyard[compteurMouvements-1]);
+    int strategieVue;
+    if (compteurMouvements != 0)
+        strategieVue = compteurMouvements-1;
+    else
+        strategieVue = longueurCycle-1;
+    tStrategiesDecouvertes.push_back(tStrategiesFuyard[strategieVue]);
 
 }
 

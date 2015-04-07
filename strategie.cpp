@@ -11,3 +11,4 @@ int Strategie::getRayonActionFuyard()const
 {
     return rayonActionFuyard;
 }
+

@@ -43,6 +43,7 @@ void Jeu::tourSuivant(){
         Position posP=P.getPosActuelle();
         Position posF=F.getPosActuelle();
 
+
         cout<<"P : [";
         posP.affiche();
         cout<<"]"<<endl;
