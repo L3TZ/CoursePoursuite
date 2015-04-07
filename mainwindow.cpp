@@ -3,142 +3,129 @@
 #include <iostream>
 
 MainWindow::MainWindow(Poursuivant& p, Fuyard& f,QWidget *parent) :
-    P(p),
-    F(f),
     QMainWindow(parent),
     ui(new Ui::MainWindow),
-    N(),
-    histo()
+    poursuivant(p),
+    fuyard(f)
 {
-    ui->setupUi(this);
-    QObject::connect(ui->boutonTourSuiv,SIGNAL(clicked()),this,SLOT(tourSuivant()));
-    QObject::connect(ui->boutonFinirPartie,SIGNAL(clicked()),this,SLOT(terminerPartie()));
-    this->lancerJeu();
+    this->initJeu();
 }
 
 MainWindow::~MainWindow()
 {
+    delete jeu;
     delete ui;
 }
 
 void MainWindow::lancerJeu()
 {
-    Position posP=P.getPosActuelle();
-    Position posF=F.getPosActuelle();
-
-    histo.ajoutEntree(posF,posP);
-
-    cout<<"P : [";
-    posP.affiche();
-    cout<<"]"<<endl;
-    cout<<"F : [";
-    posF.affiche();
-    cout<<"]"<<endl;
-
-    majLabGrillePositionsF();
-    majLabGrillePositionsP();
-    majLabTour();
+    jeu->lancerJeu();
+    majPositionGrille();
 }
 
 void MainWindow::tourSuivant(){
-
-    Position posP=P.getPosActuelle();
-    Position posF=F.getPosActuelle();
-
-    if(posP != posF){
-        Position decisionP=P.donnerDecision(histo);
-        Position decisionF=F.donnerDecision(histo);
-        N.setFuyardDecision(decisionF);
-        N.setPoursuivantDecision(decisionP);
-
-        if (N.tourValide())
-        {
-            P.avancer(decisionP);
-            F.avancer(decisionF);
-            histo.ajoutEntree(decisionF,decisionP);
-            P.apprentissage(histo);
-            N.raz();
-        }
-        posP=P.getPosActuelle();
-        posF=F.getPosActuelle();
-
-        cout<<"P : [";
-        posP.affiche();
-        cout<<"]"<<endl;
-        cout<<"F : [";
-        posF.affiche();
-        cout<<"]"<<endl;
-
-        //Appeler F avant P car clean de la grille
-        majLabGrillePositionsF();
-        majLabGrillePositionsP();
-        majLabTour();
-        if(posP==posF)majGrilleJeuTermine(posP);
-    }
-    else{
-        cout<<"Jeu terminé"<<endl;
-        majGrilleJeuTermine(posP);
-    }
+    jeu->tourSuivant();
+    majPositionGrille();
 }
 
-//Termine la partie
 void MainWindow::terminerPartie(){
-    Position posP=P.getPosActuelle();
-    Position posF=F.getPosActuelle();
-    int cpt=0; //variable pour éviter une boucle infinie
-
-    while(posP!=posF && cpt<1000){
-        this->tourSuivant();
-        posP=P.getPosActuelle();
-        posF=F.getPosActuelle();
-        cpt++;
-    }
+    jeu->terminerPartie();
+    majPositionGrille();
 }
 
-//Affichage position du fuyard
-void MainWindow::majLabGrillePositionsF(){
-    int xF=F.getPosActuelle().getX();
-    int yF=F.getPosActuelle().getY();
+void MainWindow::initJeu(){
+    jeu = new Jeu (poursuivant,fuyard);
+    ui->setupUi(this);
+    QObject::connect(ui->boutonTourSuiv,SIGNAL(clicked()),this,SLOT(tourSuivant()));
+    QObject::connect(ui->boutonFinirPartie,SIGNAL(clicked()),this,SLOT(terminerPartie()));
+    QObject::connect(ui->boutonReinit,SIGNAL(clicked()),this,SLOT(initJeu()));
+    QObject::connect(ui->boutonQuitter,SIGNAL(clicked()),this,SLOT(close()));
+    QObject::connect(ui->histoP,SIGNAL(clicked(QModelIndex)),this,SLOT(clickOnHistoP()));
+    QObject::connect(ui->histoF,SIGNAL(clicked(QModelIndex)),this,SLOT(clickOnHistoF()));
+    this->lancerJeu();
+}
+
+void MainWindow::majPositionGrille(){
+    int xF=jeu->getFuyard().getPosActuelle().getX();
+    int yF=jeu->getFuyard().getPosActuelle().getY();
+    int xP=jeu->getPoursuivant().getPosActuelle().getX();
+    int yP=jeu->getPoursuivant().getPosActuelle().getY();
+
+    QString nTour = QString::number(jeu->getHistorique().getNbTours());
+
     QString positionF="X:"+QString::number(xF)+"  Y:"+ QString::number(yF);
-    ui->labelPosF->setText(positionF);
+
+    QString positionP="X:"+QString::number(xP)+"  Y:"+ QString::number(yP);
+
 
     ui->grille->clearContents();
-    ui->grille->setItem(xF,yF,new QTableWidgetItem);
-    ui->grille->item(xF,yF)->setBackground(Qt::blue);
-}
+    ui->labelNumTour->setText(nTour);
 
-//Affichage position du poursuivant
-void MainWindow::majLabGrillePositionsP(){
-    int xP=P.getPosActuelle().getX();
-    int yP=P.getPosActuelle().getY();
-    QString positionP="X:"+QString::number(xP)+"  Y:"+ QString::number(yP);
+    ui->labelPosF->setText(positionF);
     ui->labelPosP->setText(positionP);
 
-    ui->grille->setItem(xP,yP,new QTableWidgetItem);
-    ui->grille->item(xP,yP)->setBackground(Qt::red);
+    if (xF != xP || yF != yP){
+
+        ui->grille->setItem(xF,yF,new QTableWidgetItem);
+        ui->grille->item(xF,yF)->setBackground(Qt::blue);
+
+        ui->grille->setItem(xP,yP,new QTableWidgetItem);
+        ui->grille->item(xP,yP)->setBackground(Qt::red);
+    }
+    else {
+        ui->grille->setItem(xF,yF,new QTableWidgetItem);
+        ui->grille->item(xF,yF)->setBackground(Qt::green);
+    }
+
+    majHisto();
 }
 
-//Affichage numéro du tour
-void MainWindow::majLabTour(){
-    QString nTour = ui->labelNumTour->text();
-    int newNumTour = nTour.toInt();
+void MainWindow::majHisto(){
+    Historique histo = jeu->getHistorique();
 
-    newNumTour = newNumTour+1;
-    nTour = QString::number(newNumTour);
-    ui->labelNumTour->setText(nTour);
+    ui->histoF->clear();
+    ui->histoP->clear();
+
+    for (int i = 0; i < histo.getNbTours(); i++){
+        Position posP= histo.getPositionPoursuivant(i);
+        Position posF=histo.getPositionFuyard(i);
+
+        int xP=posP.getX(); int yP=posP.getY();
+        int xF=posF.getX();int yF=posF.getY();
+
+        QString dernierePositionP="X:"+ QString::number(xP)+ ", Y:"+ QString::number(yP);
+        ui->histoP->addItem(dernierePositionP);
+        QString dernierePositionF="X:"+ QString::number(xF)+ ", Y:"+ QString::number(yF);
+        ui->histoF->addItem(dernierePositionF);
+    }
 }
 
-//Affichage de la position finale en noir
-void MainWindow::majGrilleJeuTermine(Position p){
-    int x=p.getX();
-    int y=p.getY();
-
-    ui->grille->clearContents();
-    ui->grille->setItem(x,y,new QTableWidgetItem);
-    ui->grille->item(x,y)->setBackground(Qt::black);
-}
-
-void MainWindow::on_boutonQuitter_clicked()
+void MainWindow::clickOnHistoP()
 {
-    close();
+     //Récupération de l'index sur lequel l'utilisateur click
+    int currentIndex=ui->histoP->currentRow();
+
+    Historique histo = jeu->getHistorique();
+    Position posP = histo.getPositionPoursuivant(currentIndex);
+
+    //Affichage de la position demandé
+    ui->grille->clearContents(); //On efface la grille
+    majPositionGrille(); //On réaffiche les positions actuelles de P et F
+    ui->grille->setItem(posP.getX(),posP.getY(),new QTableWidgetItem);
+    ui->grille->item(posP.getX(),posP.getY())->setBackground(QColor(255, 0, 0, 100));
+}
+
+void MainWindow::clickOnHistoF()
+{
+    //Récupération de l'index sur lequel l'utilisateur click
+    int currentIndex=ui->histoF->currentRow();
+
+    Historique histo = jeu->getHistorique();
+    Position posF = histo.getPositionFuyard(currentIndex);
+
+    //Affichage de la position demandé
+    ui->grille->clearContents(); //On efface la grille
+    majPositionGrille(); //On réaffiche les positions actuelles de P et F
+    ui->grille->setItem(posF.getX(),posF.getY(),new QTableWidgetItem);
+    ui->grille->item(posF.getX(),posF.getY())->setBackground(QColor(0,0,255,100));
 }

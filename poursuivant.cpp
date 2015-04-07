@@ -4,6 +4,7 @@
 #include "Exception/poursuivantexceptionmauvaiseprofondeurhisto.h"
 #include "Exception/poursuivantexceptionapprentissageimpossible.h"
 
+
 Poursuivant::Poursuivant(int rayonAction,bool visibiliteFuyard,int profondeurHistorique,Position pos):Joueur(pos),rayonAction(rayonAction),visibiliteFuyard(visibiliteFuyard),profondeurHistorique(profondeurHistorique)
 {
     if (rayonAction<0)

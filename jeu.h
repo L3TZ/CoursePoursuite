@@ -35,7 +35,6 @@ public:
          *
          *  \param p : un poursuivant
          * \param f : un fuyard
-         * \param w : la fenêtre principale
          */
     Jeu(Poursuivant& p, Fuyard& f);
 
@@ -54,9 +53,35 @@ public:
         *
         */
     void tourSuivant();
+    /*!
+        *  \brief Terminer la partie
+        *
+        *  Methode qui permet de dérouler toute la partie
+        *
+        */
+    void terminerPartie();
 
-    Position getPositionF();
-    Position getPositionP();
+    /*!
+        *  \brief Getter du poursuivant
+        *
+        *  \return le poursuivant du jeu
+        *
+        */
+    Poursuivant getPoursuivant() const;
+    /*!
+        *  \brief Getter du fuyard
+        *
+        *  \return le fuyard du jeu
+        *
+        */
+    Fuyard getFuyard() const;
+    /*!
+        *  \brief Getter de l'historique
+        *
+        *  \return l'historique du jeu
+        *
+        */
+    Historique getHistorique() const;
 
 };
 #endif // JEU_H

@@ -4,13 +4,14 @@
 #include "mainwindow.h"
 //#include "jeu.h"
 #include "strategiequart.h"
+#include "strategiecycle.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
     Poursuivant P(2,true,0,Position(5,25));
-    Fuyard F(Position(10,10));
+    Fuyard F(Position(30,30));
 
     StrategieQuart st1(1,0,0,0,1); //P même X, même Y
     StrategieQuart st2(1,0,1,0,-1);  //P même X, Y plus grand
@@ -21,6 +22,15 @@ int main(int argc, char *argv[])
     StrategieQuart st7(1,-1,0,1,0);  //P X plus petit, même Y
     StrategieQuart st8(1,-1,1,-1,-1);  //P X plus petit, Y plus grand
     StrategieQuart st9(1,-1,-1,1,1); //P X plus petit, Y plus petit
+
+    const int RAYON_ACTION_FUYARD = 1;
+    const int LONGUEUR_CYCLE = 4;
+
+//    StrategieCycle st1(RAYON_ACTION_FUYARD,0,-1,LONGUEUR_CYCLE);
+//    StrategieCycle st2(RAYON_ACTION_FUYARD,1,0,LONGUEUR_CYCLE);
+//    StrategieCycle st3(RAYON_ACTION_FUYARD,0,1,LONGUEUR_CYCLE);
+//    StrategieCycle st4(RAYON_ACTION_FUYARD,-1,0,LONGUEUR_CYCLE);
+
     std::vector<Strategie*> tStrat;
     tStrat.push_back(&st1);
     tStrat.push_back(&st2);
@@ -44,11 +54,6 @@ int main(int argc, char *argv[])
 
     w.show();
 
-
-    //QObject::connect(w.ui->boutonTourSuiv,SIGNAL(pressed()),jeu.tourSuivant());
-
-
-//    jeu.lancerJeu();
 
     return a.exec();
 }

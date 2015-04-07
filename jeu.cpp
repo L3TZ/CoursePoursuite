@@ -14,10 +14,6 @@ void Jeu::lancerJeu()
     Position posF=F.getPosActuelle();
 
     histo.ajoutEntree(posF,posP);
-/*
-    Position decisionP;
-    Position decisionF;
-*/
 
     cout<<"P : [";
     posP.affiche();
@@ -26,12 +22,27 @@ void Jeu::lancerJeu()
     posF.affiche();
     cout<<"]"<<endl;
 
+}
 
-   // while(posP!=posF){
-        this->tourSuivant();
+void Jeu::tourSuivant(){
+    if (P.getPosActuelle() != F.getPosActuelle()) {
 
-        posP=P.getPosActuelle();
-        posF=F.getPosActuelle();
+        Position decisionP=P.donnerDecision(histo);
+        Position decisionF=F.donnerDecision(histo);
+        N.setFuyardDecision(decisionF);
+        N.setPoursuivantDecision(decisionP);
+
+        if (N.tourValide())
+        {
+            P.avancer(decisionP);
+            F.avancer(decisionF);
+            histo.ajoutEntree(decisionF,decisionP);
+            P.apprentissage(histo);
+            N.raz();
+        }
+        Position posP=P.getPosActuelle();
+        Position posF=F.getPosActuelle();
+
 
         cout<<"P : [";
         posP.affiche();
@@ -39,31 +50,32 @@ void Jeu::lancerJeu()
         cout<<"F : [";
         posF.affiche();
         cout<<"]"<<endl;
-  //  }
-
-}
-
-void Jeu::tourSuivant(){
-
-    Position decisionP=P.donnerDecision(histo);
-    Position decisionF=F.donnerDecision(histo);
-    N.setFuyardDecision(decisionF);
-    N.setPoursuivantDecision(decisionP);
-
-    if (N.tourValide())
-    {
-        P.avancer(decisionP);
-        F.avancer(decisionF);
-        histo.ajoutEntree(decisionF,decisionP);
-        P.apprentissage(histo);
-        N.raz();
+    } else {
+        cout<<"Jeu terminé"<<endl;
     }
 }
 
-Position Jeu::getPositionF(){
-    return this->F.getPosActuelle();
+void Jeu::terminerPartie(){
+    Position posP=P.getPosActuelle();
+    Position posF=F.getPosActuelle();
+    int cpt=0; //variable pour éviter une boucle infinie
+
+    while(posP!=posF && cpt<1000){
+        this->tourSuivant();
+        posP=P.getPosActuelle();
+        posF=F.getPosActuelle();
+        cpt++;
+    }
 }
 
-Position Jeu::getPositionP(){
-    return this->P.getPosActuelle();
+Poursuivant Jeu::getPoursuivant()const{
+    return this->P;
+}
+
+Fuyard Jeu::getFuyard()const{
+    return this->F;
+}
+
+Historique Jeu::getHistorique()const{
+    return this->histo;
 }
