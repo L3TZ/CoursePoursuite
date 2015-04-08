@@ -8,13 +8,13 @@ class StrategieCycle : public Strategie
 private:
     const int ajoutX;
     const int ajoutY;
-    int longueurCycle;
+    int positionDansCycle;
     static int compteurMouvements;
 
 public:
     StrategieCycle(int rayonActionFuyard,int ajoutX,int ajoutY,int longueurCycle);
 
-    bool correspondancePosition(int numeroStrategie)const;
+    bool correspondancePosition()const;
     Position calculNouvellePosition(const Position& posFuyard)const;
 
     virtual Position decisionFuyard(const std::vector<Strategie*>& tStrategies,const Position& posFuyard,const Position& posPoursuivant)const;

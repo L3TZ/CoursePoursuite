@@ -5,14 +5,14 @@
 
 int StrategieCycle::compteurMouvements(0);
 
-StrategieCycle::StrategieCycle(int rayonActionFuyard, int ajoutX, int ajoutY,int longueurCycle):Strategie(rayonActionFuyard),ajoutX(ajoutX),ajoutY(ajoutY),longueurCycle(longueurCycle)
+StrategieCycle::StrategieCycle(int rayonActionFuyard, int ajoutX, int ajoutY,int positionDansCycle):Strategie(rayonActionFuyard),ajoutX(ajoutX),ajoutY(ajoutY),positionDansCycle(positionDansCycle)
 {
 
 }
 
-bool StrategieCycle::correspondancePosition(int numeroStrategie) const
+bool StrategieCycle::correspondancePosition() const
 {
-    if(numeroStrategie!=compteurMouvements)
+    if(positionDansCycle!=compteurMouvements)
         return false;
 
     return true;
@@ -27,10 +27,10 @@ Position StrategieCycle::decisionFuyard(const std::vector<Strategie *> &tStrateg
 {
     for (unsigned int i=0;i<tStrategies.size();i++)
     {
-        if (dynamic_cast<StrategieCycle*>(tStrategies[i])->correspondancePosition(i))
+        if (dynamic_cast<StrategieCycle*>(tStrategies[i])->correspondancePosition())
         {
             std::cout<<"--Utilisation stratégie n°"<<i+1<<"--"<<std::endl;
-            compteurMouvements=(compteurMouvements+1)%longueurCycle;
+            compteurMouvements=(compteurMouvements+1)%(tStrategies.size());
             return dynamic_cast<StrategieCycle*>(tStrategies[i])->calculNouvellePosition(posFuyard);
         }
     }
@@ -43,7 +43,7 @@ Position StrategieCycle::decisionPoursuivant(const std::vector<Strategie *> &tSt
     for (unsigned int i=0;i<tStrategiesDecouvertes.size();i++)
     {
         stratTmp = dynamic_cast<StrategieCycle*>(tStrategiesDecouvertes[i]);
-        if (stratTmp->correspondancePosition(i))
+        if (stratTmp->correspondancePosition())
         {
             return Position::reductionRayonAction(posPoursuivant,stratTmp->calculNouvellePosition(posFuyard),rayonActionPoursuivant);
         }
@@ -53,7 +53,7 @@ Position StrategieCycle::decisionPoursuivant(const std::vector<Strategie *> &tSt
 
 void StrategieCycle::apprentissagePoursuivant(std::vector<Strategie *> &tStrategiesDecouvertes, const std::vector<Strategie *> &tStrategiesFuyard, const Position &dernierePosPoursuivant, const Position &dernierePosFuyard, const Position &nouvellePosFuyard) const
 {
-    if(tStrategiesDecouvertes.size()==longueurCycle)
+    if(tStrategiesDecouvertes.size()==(tStrategiesFuyard.size()))
     {
         return ;
     }
@@ -61,7 +61,7 @@ void StrategieCycle::apprentissagePoursuivant(std::vector<Strategie *> &tStrateg
     if (compteurMouvements != 0)
         strategieVue = compteurMouvements-1;
     else
-        strategieVue = longueurCycle-1;
+        strategieVue = (tStrategiesFuyard.size())-1;
     tStrategiesDecouvertes.push_back(tStrategiesFuyard[strategieVue]);
 
 }

@@ -15,9 +15,9 @@ bool StrategieQuart::correspondancePosition(const Position &posFuyard, const Pos
 
     if ((egalX && relativeX!=0) || (egalY && relativeY!=0))
         return false;
-    if ((diffX && relativeX!=-1) || (diffY && relativeY!=-1))
+    if ((!egalX && (diffX && relativeX!=-1)) || (!egalY && (diffY && relativeY!=-1)))
         return false;
-    if ((!diffX && relativeX!=1) || (!diffY && relativeY!=1))
+    if ((!egalX && (!diffX && relativeX!=1)) || (!egalY && (!diffY && relativeY!=1)))
         return false;
     return true;
 }
