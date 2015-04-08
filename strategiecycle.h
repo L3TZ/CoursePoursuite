@@ -11,6 +11,9 @@ private:
     int positionDansCycle;
     static int compteurMouvements;
 
+    static int suppositionLongueurCyclePoursuivant;
+    static int suppositionEtapeCyclePoursuivant;
+
 public:
     StrategieCycle(int rayonActionFuyard,int ajoutX,int ajoutY,int longueurCycle);
 

@@ -5,6 +5,10 @@
 
 int StrategieCycle::compteurMouvements(0);
 
+int StrategieCycle::suppositionLongueurCyclePoursuivant(0);
+
+int StrategieCycle::suppositionEtapeCyclePoursuivant(0);
+
 StrategieCycle::StrategieCycle(int rayonActionFuyard, int ajoutX, int ajoutY,int positionDansCycle):Strategie(rayonActionFuyard),ajoutX(ajoutX),ajoutY(ajoutY),positionDansCycle(positionDansCycle)
 {
 
@@ -39,31 +43,89 @@ Position StrategieCycle::decisionFuyard(const std::vector<Strategie *> &tStrateg
 
 Position StrategieCycle::decisionPoursuivant(const std::vector<Strategie *> &tStrategiesDecouvertes, const Position &posFuyard, const Position &posPoursuivant, int rayonActionPoursuivant) const
 {
-    StrategieCycle* stratTmp;
-    for (unsigned int i=0;i<tStrategiesDecouvertes.size();i++)
+//    StrategieCycle* stratTmp;
+//    for (unsigned int i=0;i<tStrategiesDecouvertes.size();i++)
+//    {
+//        stratTmp = dynamic_cast<StrategieCycle*>(tStrategiesDecouvertes[i]);
+//        if (stratTmp->correspondancePosition())
+//        {
+//            return Position::reductionRayonAction(posPoursuivant,stratTmp->calculNouvellePosition(posFuyard),rayonActionPoursuivant);
+//        }
+//    }
+//    return Position::reductionRayonAction(posPoursuivant,posFuyard,rayonActionPoursuivant);
+
+    if (suppositionLongueurCyclePoursuivant == 0)
     {
-        stratTmp = dynamic_cast<StrategieCycle*>(tStrategiesDecouvertes[i]);
-        if (stratTmp->correspondancePosition())
-        {
-            return Position::reductionRayonAction(posPoursuivant,stratTmp->calculNouvellePosition(posFuyard),rayonActionPoursuivant);
-        }
+        return Position::reductionRayonAction(posPoursuivant,posFuyard,rayonActionPoursuivant);
     }
-    return Position::reductionRayonAction(posPoursuivant,posFuyard,rayonActionPoursuivant);;
+    else
+    {
+        for (unsigned int i=0;i<tStrategiesDecouvertes.size();i++)
+        {
+            if (dynamic_cast<StrategieCycle*>(tStrategiesDecouvertes[i])->positionDansCycle == suppositionEtapeCyclePoursuivant)
+            {
+                return Position::reductionRayonAction(posPoursuivant,dynamic_cast<StrategieCycle*>(tStrategiesDecouvertes[i])->calculNouvellePosition(posFuyard),rayonActionPoursuivant);
+            }
+        }
+        return Position::reductionRayonAction(posPoursuivant,posFuyard,rayonActionPoursuivant);
+    }
 }
 
 void StrategieCycle::apprentissagePoursuivant(std::vector<Strategie *> &tStrategiesDecouvertes, const std::vector<Strategie *> &tStrategiesFuyard, const Position &dernierePosPoursuivant, const Position &dernierePosFuyard, const Position &nouvellePosFuyard) const
 {
-    if(tStrategiesDecouvertes.size()==(tStrategiesFuyard.size()))
-    {
-        return ;
-    }
-    int strategieVue;
-    if (compteurMouvements != 0)
-        strategieVue = compteurMouvements-1;
-    else
-        strategieVue = (tStrategiesFuyard.size())-1;
-    tStrategiesDecouvertes.push_back(tStrategiesFuyard[strategieVue]);
+//    if(tStrategiesDecouvertes.size()==(tStrategiesFuyard.size()))
+//    {
+//        return ;
+//    }
+//    int strategieVue;
+//    if (compteurMouvements != 0)
+//        strategieVue = compteurMouvements-1;
+//    else
+//        strategieVue = (tStrategiesFuyard.size())-1;
+//    tStrategiesDecouvertes.push_back(tStrategiesFuyard[strategieVue]);
 
+
+    if (suppositionLongueurCyclePoursuivant == 0)
+    {
+        for (unsigned int i=0;i<tStrategiesFuyard.size();i++)
+        {
+            if (dynamic_cast<StrategieCycle*>(tStrategiesFuyard[i])->positionDansCycle == 0)
+            {
+                tStrategiesDecouvertes.push_back(tStrategiesFuyard[i]);
+            }
+        }
+        suppositionLongueurCyclePoursuivant++;
+        return;
+    }
+    else
+    {
+        for (unsigned int i=0;i<tStrategiesDecouvertes.size();i++)
+        {
+            if (dynamic_cast<StrategieCycle*>(tStrategiesDecouvertes[i])->positionDansCycle == suppositionEtapeCyclePoursuivant)
+            {
+                if (dynamic_cast<StrategieCycle*>(tStrategiesDecouvertes[i])->calculNouvellePosition(dernierePosFuyard) != nouvellePosFuyard)
+                {
+                    suppositionLongueurCyclePoursuivant++;
+                    suppositionEtapeCyclePoursuivant=0;
+
+                    for (unsigned int j=0;j<tStrategiesFuyard.size();j++)
+                    {
+                        if (dynamic_cast<StrategieCycle*>(tStrategiesFuyard[j])->positionDansCycle == suppositionLongueurCyclePoursuivant-1)
+                        {
+                            tStrategiesDecouvertes.push_back(tStrategiesFuyard[j]);
+                            return;
+                        }
+                    }
+                    return;
+                }
+                else
+                {
+                    suppositionEtapeCyclePoursuivant=(suppositionEtapeCyclePoursuivant+1)%suppositionLongueurCyclePoursuivant;
+                    return;
+                }
+            }
+        }
+    }
 }
 
 Position StrategieCycle::decisionPoursuivant(const std::vector<Strategie *> &tStrategiesDecouvertes, const std::vector<Position> &posFuyardPossibles, const Position &posPoursuivant, int rayonActionPoursuivant) const
