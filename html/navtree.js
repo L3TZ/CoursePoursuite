@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "Course Poursuite", "index.html", [
+  [ "CoursePoursuite", "index.html", [
     [ "CoursePoursuite", "md___users__stav__documents__fac__m1__s8__projet__course_poursuite__r_e_a_d_m_e.html", null ],
     [ "Classes", null, [
       [ "Class List", "annotated.html", "annotated" ],

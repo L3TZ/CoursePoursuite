@@ -28,7 +28,7 @@ public:
 
 private:
     Ui::MainWindow *ui; /*!< Interface graphique*/
-    Jeu jeu;
+    Jeu jeu; /*!< instance du jeu*/
 
 private slots:
     /*!
@@ -68,7 +68,7 @@ private slots:
         */
     void clickOnHistoP();
     /*!
-        *  \brief Intialise les paramètres pour l'affichage d'une ancienne position de F
+        *  \brief Affiche une ancienne position de F
         *
         *  Methode qui permet d'afficher une ancienne position de F lorsque
         * l'utilisateur click dessus

@@ -25,6 +25,7 @@ var dir_2cbdcad72a2bae0c5de0b92d2be81fd1 =
     [ "strategie.h", "strategie_8h.html", [
       [ "Strategie", "class_strategie.html", "class_strategie" ]
     ] ],
+    [ "strategiecycle.h", "strategiecycle_8h_source.html", null ],
     [ "strategiequart.h", "strategiequart_8h_source.html", null ],
     [ "strategietest.h", "strategietest_8h_source.html", null ]
 ];

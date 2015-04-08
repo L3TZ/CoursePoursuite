@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Course Poursuite: Class Members</title>
+<title>CoursePoursuite: Class Members</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Course Poursuite
+   <div id="projectname">CoursePoursuite
    </div>
   </td>
  </tr>
@@ -144,6 +144,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>apprentissagePoursuivant()
 : <a class="el" href="class_strategie.html#a1d40497c9263c2da87912fa618034778">Strategie</a>
+, <a class="el" href="class_strategie_cycle.html#a3c61d6da6620c6ed91768132a9260dcb">StrategieCycle</a>
 , <a class="el" href="class_strategie_quart.html#aa1259cea1e6d3e2dbac992d0a147ac6b">StrategieQuart</a>
 , <a class="el" href="class_strategie_test.html#afd4afeed9b61bb75f5c5de05941ad12a">StrategieTest</a>
 </li>
@@ -166,11 +167,13 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
 <li>decisionFuyard()
 : <a class="el" href="class_strategie.html#aab04d9582c34559e952e07e4f0a1cdb8">Strategie</a>
+, <a class="el" href="class_strategie_cycle.html#a14e83670a21b5d31665812162a6fedb5">StrategieCycle</a>
 , <a class="el" href="class_strategie_quart.html#a65b9dacd95f402276f1c405ebcf806ba">StrategieQuart</a>
 , <a class="el" href="class_strategie_test.html#a305b37a3f1767bc5e01ac424ab5f034c">StrategieTest</a>
 </li>
 <li>decisionPoursuivant()
 : <a class="el" href="class_strategie.html#a9c7c53d1570101a109c4a1feecc3df41">Strategie</a>
+, <a class="el" href="class_strategie_cycle.html#ac5cf3463ad935f065f4770959bf89b68">StrategieCycle</a>
 , <a class="el" href="class_strategie_quart.html#a7b70c615d917d491eab80c384e7e1f40">StrategieQuart</a>
 , <a class="el" href="class_strategie_test.html#afaf086ac03aacb6bc7eb3724fe958b11">StrategieTest</a>
 </li>
@@ -195,8 +198,14 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>getDernierePositionPoursuivant()
 : <a class="el" href="class_historique.html#a37f37c835143f7a0c095d091d3fe1c26">Historique</a>
 </li>
+<li>getFuyard()
+: <a class="el" href="class_jeu.html#aa26b68924597947993a5402c9dc04fbd">Jeu</a>
+</li>
 <li>getFuyardDecision()
 : <a class="el" href="class_notaire.html#a97b0eddc4ffea9b2e4ee889509d11d92">Notaire</a>
+</li>
+<li>getHistorique()
+: <a class="el" href="class_jeu.html#a6f2ddab1d1940c249e35bd5a313926a1">Jeu</a>
 </li>
 <li>getNbTours()
 : <a class="el" href="class_historique.html#ae42e0ab8432a640dba7ca1d685b777e5">Historique</a>
@@ -209,6 +218,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>getPositionPoursuivant()
 : <a class="el" href="class_historique.html#a7c57d2eaf4406d79f51951421f5ab366">Historique</a>
+</li>
+<li>getPoursuivant()
+: <a class="el" href="class_jeu.html#ae16f8ec03a8fdf05142cbf503445775f">Jeu</a>
 </li>
 <li>getPoursuivantDecision()
 : <a class="el" href="class_notaire.html#a138f5233d483708023da5bd51971698b">Notaire</a>
@@ -252,6 +264,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
 <li>lancerJeu()
 : <a class="el" href="class_jeu.html#a84033a99b3f0067d65cb3b4760e03ba6">Jeu</a>
+, <a class="el" href="class_main_window.html#abb5271751166e65aa0a59a86d6050c5a">MainWindow</a>
 </li>
 </ul>
 
@@ -322,6 +335,12 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
+<li>terminerPartie()
+: <a class="el" href="class_jeu.html#a0d86aba399ee50aaa12adae7b4eab5e0">Jeu</a>
+</li>
+<li>tourSuivant()
+: <a class="el" href="class_jeu.html#ab015e3afe1e410080c0074d177d92720">Jeu</a>
+</li>
 <li>tourValide()
 : <a class="el" href="class_notaire.html#a99261d48f134f91e5b6e8a7d06800e6f">Notaire</a>
 </li>
@@ -341,7 +360,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Mar 20 2015 13:01:14 for Course Poursuite by
+    <li class="footer">Generated on Thu Apr 9 2015 00:41:30 for CoursePoursuite by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

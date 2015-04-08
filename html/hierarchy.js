@@ -12,6 +12,7 @@ var hierarchy =
       [ "MainWindow", "class_main_window.html", null ]
     ] ],
     [ "Strategie", "class_strategie.html", [
+      [ "StrategieCycle", "class_strategie_cycle.html", null ],
       [ "StrategieQuart", "class_strategie_quart.html", null ],
       [ "StrategieTest", "class_strategie_test.html", null ]
     ] ]
