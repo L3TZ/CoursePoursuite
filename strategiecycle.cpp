@@ -43,16 +43,6 @@ Position StrategieCycle::decisionFuyard(const std::vector<Strategie *> &tStrateg
 
 Position StrategieCycle::decisionPoursuivant(const std::vector<Strategie *> &tStrategiesDecouvertes, const Position &posFuyard, const Position &posPoursuivant, int rayonActionPoursuivant) const
 {
-//    StrategieCycle* stratTmp;
-//    for (unsigned int i=0;i<tStrategiesDecouvertes.size();i++)
-//    {
-//        stratTmp = dynamic_cast<StrategieCycle*>(tStrategiesDecouvertes[i]);
-//        if (stratTmp->correspondancePosition())
-//        {
-//            return Position::reductionRayonAction(posPoursuivant,stratTmp->calculNouvellePosition(posFuyard),rayonActionPoursuivant);
-//        }
-//    }
-//    return Position::reductionRayonAction(posPoursuivant,posFuyard,rayonActionPoursuivant);
 
     if (suppositionLongueurCyclePoursuivant == 0)
     {
@@ -73,16 +63,6 @@ Position StrategieCycle::decisionPoursuivant(const std::vector<Strategie *> &tSt
 
 void StrategieCycle::apprentissagePoursuivant(std::vector<Strategie *> &tStrategiesDecouvertes, const std::vector<Strategie *> &tStrategiesFuyard, const Position &dernierePosPoursuivant, const Position &dernierePosFuyard, const Position &nouvellePosFuyard) const
 {
-//    if(tStrategiesDecouvertes.size()==(tStrategiesFuyard.size()))
-//    {
-//        return ;
-//    }
-//    int strategieVue;
-//    if (compteurMouvements != 0)
-//        strategieVue = compteurMouvements-1;
-//    else
-//        strategieVue = (tStrategiesFuyard.size())-1;
-//    tStrategiesDecouvertes.push_back(tStrategiesFuyard[strategieVue]);
 
 
     if (suppositionLongueurCyclePoursuivant == 0)
