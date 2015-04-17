@@ -118,6 +118,10 @@ void MainWindow::clickOnHistoP()
     majPositionGrille(); //On réaffiche les positions actuelles de P et F
     ui->grille->setItem(posP.getX(),posP.getY(),new QTableWidgetItem);
     ui->grille->item(posP.getX(),posP.getY())->setBackground(QColor(255, 0, 0, 100));
+       /*QFont f("Times", 10, QFont::Bold);
+    ui->grille->item(posP.getX(),posP.getY())->setFont(f);
+     ui->grille->item(posP.getX(),posP.getY())->setText("X");
+     ui->grille->item(posP.getX(),posP.getY())->setTextAlignment(Qt::AlignRight);*/
 }
 
 void MainWindow::clickOnHistoF()
