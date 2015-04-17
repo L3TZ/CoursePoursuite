@@ -4,11 +4,10 @@
 
 MainWindow::MainWindow(Poursuivant& p, Fuyard& f,QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow),
-    poursuivant(p),
-    fuyard(f)
+    ui(new Ui::MainWindow)
 {
-    this->initJeu();
+    jeu = new Jeu(p,f);
+    this->initFenetre();
 }
 
 MainWindow::~MainWindow()
@@ -33,8 +32,7 @@ void MainWindow::terminerPartie(){
     majPositionGrille();
 }
 
-void MainWindow::initJeu(){
-    jeu = new Jeu (poursuivant,fuyard);
+void MainWindow::initFenetre(){
     ui->setupUi(this);
     QObject::connect(ui->boutonTourSuiv,SIGNAL(clicked()),this,SLOT(tourSuivant()));
     QObject::connect(ui->boutonFinirPartie,SIGNAL(clicked()),this,SLOT(terminerPartie()));
@@ -43,6 +41,13 @@ void MainWindow::initJeu(){
     QObject::connect(ui->histoP,SIGNAL(clicked(QModelIndex)),this,SLOT(clickOnHistoP()));
     QObject::connect(ui->histoF,SIGNAL(clicked(QModelIndex)),this,SLOT(clickOnHistoF()));
     this->lancerJeu();
+}
+
+void MainWindow::initJeu(){
+    Poursuivant p = jeu->getPoursuivant();
+    Fuyard f = jeu->getFuyard();
+    jeu = new Jeu(p,f);
+    this->initFenetre();
 }
 
 void MainWindow::majPositionGrille(){

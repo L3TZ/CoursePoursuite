@@ -29,8 +29,6 @@ public:
 private:
     Ui::MainWindow *ui; /*!< Interface graphique*/
     Jeu * jeu; /*!< Jeu en cours */
-    Poursuivant poursuivant;
-    Fuyard fuyard;
 
 private slots:
     /*!
@@ -48,9 +46,16 @@ private slots:
         */
     void terminerPartie();
     /*!
+        *  \brief Initialiser la fenêtre de jeu
+        *
+        *  Methode qui permet d'initialiser les composants de la fenêtre de jeu
+        *
+        */
+    void initFenetre();
+    /*!
         *  \brief Initialiser le jeu
         *
-        *  Methode qui permet d'initialiser le jeu
+        *  Methode qui permet de ré-initialiser le jeu pendant la partie
         *
         */
     void initJeu();
