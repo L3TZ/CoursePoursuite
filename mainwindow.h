@@ -46,19 +46,25 @@ private:
          */
     void afficheFenetreMenu(QList<QWidget * > listFenetreJeu);
     /*!
-         * \brief creerListWidgetJeu
-         * \return listWidgetJeu
+         * \brief Creer la liste de widget menu
+         * \return Une liste de widget
          *
          *  Methode qui permet de creer la liste des widgets pour la fenetre de jeu
          */
     QList<QWidget * > creerListWidgetJeu();
     /*!
-         * \brief creerListWidgetMenu
-         * \return listWidgetMenu
+         * \brief Creer la liste de widget jeu
+         * \return Une liste de widget
          *
          *  Methode qui permet de creer la liste des widgets pour la fenetre de menu
          */
     QList<QWidget *> creerListWidgetMenu();
+    /*!
+          * \brief Affiche la fenetre de jeu
+          *
+          *  Methode qui permet d'afficher la fenetre de jeu
+          */
+     void afficheFenetreJeu();
 
 private slots:
     /*!
@@ -112,12 +118,12 @@ private slots:
         */
     void clickOnHistoF();
     /*!
-         * \brief afficheFenetreJeu
+         * \brief Initialise un nouveau jeu avec les positions données par l'utilisateur
          *
-         *  Methode qui permet d'afficher la fenetre de jeu lorsque
-         * l'utilisateur click sur jouer
+         *  Methode qui permet d'initialiser le nouveau jeu lorsque l'utilisateur
+         * click sur jouer.
          */
-    void afficheFenetreJeu();
+    void nouveauJeu();
 };
 
 #endif // MAINWINDOW_H

@@ -18,7 +18,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::initJeu()
 {
-
     ui->setupUi(this);
     this->showMaximized();
     QList<QWidget *> listWidgetJeu = creerListWidgetJeu();
@@ -29,7 +28,7 @@ void MainWindow::initJeu()
     QObject::connect(ui->boutonQuitter,SIGNAL(clicked()),this,SLOT(close()));
     QObject::connect(ui->histoP,SIGNAL(clicked(QModelIndex)),this,SLOT(clickOnHistoP()));
     QObject::connect(ui->histoF,SIGNAL(clicked(QModelIndex)),this,SLOT(clickOnHistoF()));
-    QObject::connect(ui->jouer,SIGNAL(clicked()),this,SLOT(afficheFenetreJeu()));
+    QObject::connect(ui->jouer,SIGNAL(clicked()),this,SLOT(nouveauJeu()));
     this->lancerJeu();
 }
 
@@ -37,6 +36,14 @@ QList<QWidget *> MainWindow::creerListWidgetMenu(){
     QList<QWidget *> list;
     list.append(ui->coursePoursuite);
     list.append(ui->jouer);
+    list.append(ui->labelInitF);
+    list.append(ui->labelInitP);
+    list.append(ui->posInitXP);
+    list.append(ui->posInitYP);
+    list.append(ui->posInitXF);
+    list.append(ui->posInitYF);
+    list.append(ui->labelX);list.append(ui->labelX_2);
+    list.append(ui->labelY);list.append(ui->labelY_2);
 
     return list;
 }
@@ -89,6 +96,32 @@ void MainWindow::afficheFenetreJeu(){
         listFenetreJeu[i]->show();//Affiche tous les elements
     }
 }
+
+void MainWindow::nouveauJeu(){
+
+    //Récuperation des données saisies de l'utilisateur
+    QString xP = ui->posInitXP->text();
+    QString yP = ui->posInitYP->text();
+    QString xF = ui->posInitXF->text();
+    QString yF = ui->posInitYF->text();
+
+    //Initialisation de la position de F et P
+    Position positionP,positionF;
+    positionP.setX(xP.toInt()); positionP.setY(yP.toInt());
+    positionF.setX(xF.toInt()); positionF.setY(yF.toInt());
+
+    //Initialisation du jeu
+    Poursuivant p = jeu->getPoursuivant();
+    p.avancer(positionP);
+    Fuyard f = jeu->getFuyard();
+    f.avancer(positionF);
+    jeu = new Jeu(p,f);
+
+    //Affichage de la fenetre de jeu et lancement du jeu
+    afficheFenetreJeu();
+    this->lancerJeu();
+}
+
 
 void MainWindow::lancerJeu()
 {
