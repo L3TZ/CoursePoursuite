@@ -18,15 +18,76 @@ MainWindow::~MainWindow()
 
 void MainWindow::initJeu()
 {
+
     ui->setupUi(this);
     this->showMaximized();
+    QList<QWidget *> listWidgetJeu = creerListWidgetJeu();
+    afficheFenetreMenu(listWidgetJeu);
     QObject::connect(ui->boutonTourSuiv,SIGNAL(clicked()),this,SLOT(tourSuivant()));
     QObject::connect(ui->boutonFinirPartie,SIGNAL(clicked()),this,SLOT(terminerPartie()));
     QObject::connect(ui->boutonReinitJeu,SIGNAL(clicked()),this,SLOT(reinitialisationJeu()));
     QObject::connect(ui->boutonQuitter,SIGNAL(clicked()),this,SLOT(close()));
     QObject::connect(ui->histoP,SIGNAL(clicked(QModelIndex)),this,SLOT(clickOnHistoP()));
     QObject::connect(ui->histoF,SIGNAL(clicked(QModelIndex)),this,SLOT(clickOnHistoF()));
+    QObject::connect(ui->jouer,SIGNAL(clicked()),this,SLOT(afficheFenetreJeu()));
     this->lancerJeu();
+}
+
+QList<QWidget *> MainWindow::creerListWidgetMenu(){
+    QList<QWidget *> list;
+    list.append(ui->coursePoursuite);
+    list.append(ui->jouer);
+
+    return list;
+}
+
+QList<QWidget * > MainWindow::creerListWidgetJeu(){
+    QList<QWidget *> listFenetreJeu;
+    listFenetreJeu.append(ui->boutonFinirPartie);
+    listFenetreJeu.append(ui->boutonReinitJeu);
+    listFenetreJeu.append(ui->boutonTourSuiv);
+    listFenetreJeu.append(ui->graphicsView);
+    listFenetreJeu.append(ui->graphicsView_2);
+    listFenetreJeu.append(ui->grille);
+    listFenetreJeu.append(ui->histoF);
+    listFenetreJeu.append(ui->histoP);
+    listFenetreJeu.append(ui->labelF);
+    listFenetreJeu.append(ui->labelHistoF);
+    listFenetreJeu.append(ui->labelHistoP);
+    listFenetreJeu.append(ui->labelNumTour);
+    listFenetreJeu.append(ui->labelP);
+    listFenetreJeu.append(ui->labelPosF);
+    listFenetreJeu.append(ui->labelPosP);
+    listFenetreJeu.append(ui->labelStratF);
+    listFenetreJeu.append(ui->labelStratP);
+    listFenetreJeu.append(ui->labelTour);
+    listFenetreJeu.append(ui->line);
+    listFenetreJeu.append(ui->nom_positionF);
+    listFenetreJeu.append(ui->nom_positionP);
+    listFenetreJeu.append(ui->nom_stratF);
+    listFenetreJeu.append(ui->nom_stratP);
+
+    return listFenetreJeu;
+}
+
+void MainWindow::afficheFenetreMenu(QList<QWidget * > listFenetreJeu){
+    //Affiche tous les elements de la fenetre de jeu
+    for (int i=0; i<listFenetreJeu.count() ; i++) {
+        listFenetreJeu[i]->hide();
+    }
+}
+
+void MainWindow::afficheFenetreJeu(){
+    //Créer la liste des widgets de la fenetre de menu
+    QList<QWidget * > list = creerListWidgetMenu();
+    for (int i=0; i<list.count() ; i++) {
+        list[i]->hide();//Cache tous les elements
+    }
+    //Créer la liste des widgets de la fenetre de jeu
+    QList<QWidget * > listFenetreJeu = creerListWidgetJeu();
+    for (int i=0; i<listFenetreJeu.count() ; i++) {
+        listFenetreJeu[i]->show();//Affiche tous les elements
+    }
 }
 
 void MainWindow::lancerJeu()
@@ -154,3 +215,4 @@ void MainWindow::clickOnHistoF()
         ui->grille->item(posF.getX(),posF.getY())->setBackground(QColor(0,0,255,100));
     }
 }
+

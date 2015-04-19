@@ -26,6 +26,7 @@ public:
         */
     void lancerJeu();
 
+
 private:
     Ui::MainWindow *ui; /*!< Interface graphique*/
     Jeu * jeu; /*!< instance du jeu*/
@@ -37,6 +38,27 @@ private:
         *
         */
     void initJeu();
+    /*!
+         * \brief afficheFenetreMenu
+         * \param listFenetreJeu
+         *
+         *  Methode qui permet d'afficher la fenetre de menu
+         */
+    void afficheFenetreMenu(QList<QWidget * > listFenetreJeu);
+    /*!
+         * \brief creerListWidgetJeu
+         * \return listWidgetJeu
+         *
+         *  Methode qui permet de creer la liste des widgets pour la fenetre de jeu
+         */
+    QList<QWidget * > creerListWidgetJeu();
+    /*!
+         * \brief creerListWidgetMenu
+         * \return listWidgetMenu
+         *
+         *  Methode qui permet de creer la liste des widgets pour la fenetre de menu
+         */
+    QList<QWidget *> creerListWidgetMenu();
 
 private slots:
     /*!
@@ -89,6 +111,13 @@ private slots:
         * l'utilisateur click dessus
         */
     void clickOnHistoF();
+    /*!
+         * \brief afficheFenetreJeu
+         *
+         *  Methode qui permet d'afficher la fenetre de jeu lorsque
+         * l'utilisateur click sur jouer
+         */
+    void afficheFenetreJeu();
 };
 
 #endif // MAINWINDOW_H
