@@ -19,6 +19,7 @@ MainWindow::~MainWindow()
 void MainWindow::initJeu()
 {
     ui->setupUi(this);
+    this->showMaximized();
     QObject::connect(ui->boutonTourSuiv,SIGNAL(clicked()),this,SLOT(tourSuivant()));
     QObject::connect(ui->boutonFinirPartie,SIGNAL(clicked()),this,SLOT(terminerPartie()));
     QObject::connect(ui->boutonReinitJeu,SIGNAL(clicked()),this,SLOT(reinitialisationJeu()));
@@ -102,9 +103,9 @@ void MainWindow::majHisto(){
         int xP=posP.getX(); int yP=posP.getY();
         int xF=posF.getX();int yF=posF.getY();
 
-        QString dernierePositionP="X:"+ QString::number(xP)+ ", Y:"+ QString::number(yP);
+        QString dernierePositionP=QString::number(i)+" :  "+"X:"+ QString::number(xP)+ ", Y:"+ QString::number(yP);
         ui->histoP->addItem(dernierePositionP);
-        QString dernierePositionF="X:"+ QString::number(xF)+ ", Y:"+ QString::number(yF);
+        QString dernierePositionF=QString::number(i)+" :  "+"X:"+ QString::number(xF)+ ", Y:"+ QString::number(yF);
         ui->histoF->addItem(dernierePositionF);
     }
 }
@@ -117,11 +118,21 @@ void MainWindow::clickOnHistoP()
     Historique histo = jeu->getHistorique();
     Position posP = histo.getPositionPoursuivant(currentIndex);
 
-    //Affichage de la position demandé
-    ui->grille->clearContents(); //On efface la grille
-    majPositionGrille(); //On réaffiche les positions actuelles de P et F
-    ui->grille->setItem(posP.getX(),posP.getY(),new QTableWidgetItem);
-    ui->grille->item(posP.getX(),posP.getY())->setBackground(QColor(255, 0, 0, 100));
+    //Affichage de la position demandée
+  //  ui->grille->clearContents(); //On efface la grille
+  //  majPositionGrille(); //On réaffiche les positions actuelles de P et F
+
+    //Récupération de l'item à modifier
+    QTableWidgetItem* item = ui->grille->item(posP.getX(),posP.getY());
+    if(item != NULL){ // Si Null, on ne peut pas changer le texte car la case "n'existe pas"
+        item->setText("X");
+        //ui->grille->item(posP.getX(),posP.getY())->setTextAlignment(Qt::AlignLeft); Délà aligné, on peut pas plus
+    }
+    else{
+        cout<<"Else Poursuivant"<<endl;
+        ui->grille->setItem(posP.getX(),posP.getY(),new QTableWidgetItem);
+        ui->grille->item(posP.getX(),posP.getY())->setText("X");
+    }
 }
 
 void MainWindow::clickOnHistoF()
@@ -132,9 +143,14 @@ void MainWindow::clickOnHistoF()
     Historique histo = jeu->getHistorique();
     Position posF = histo.getPositionFuyard(currentIndex);
 
-    //Affichage de la position demandé
-    ui->grille->clearContents(); //On efface la grille
-    majPositionGrille(); //On réaffiche les positions actuelles de P et F
-    ui->grille->setItem(posF.getX(),posF.getY(),new QTableWidgetItem);
-    ui->grille->item(posF.getX(),posF.getY())->setBackground(QColor(0,0,255,100));
+    //Affichage de la position demandée
+  //  ui->grille->clearContents(); //On efface la grille
+  //  majPositionGrille(); //On réaffiche les positions actuelles de P et F
+
+    //Récupération de l'item à modifier
+    QTableWidgetItem* item = ui->grille->item(posF.getX(),posF.getY());
+    if(item == NULL){ // Si !Null on n'efface pas le background existant
+        ui->grille->setItem(posF.getX(),posF.getY(),new QTableWidgetItem);
+        ui->grille->item(posF.getX(),posF.getY())->setBackground(QColor(0,0,255,100));
+    }
 }
