@@ -28,7 +28,15 @@ public:
 
 private:
     Ui::MainWindow *ui; /*!< Interface graphique*/
-    Jeu jeu; /*!< instance du jeu*/
+    Jeu * jeu; /*!< instance du jeu*/
+
+    /*!
+        *  \brief Initialisation du jeu
+        *
+        *  Methode qui permet d'initialiser le jeu
+        *
+        */
+    void initJeu();
 
 private slots:
     /*!
@@ -45,6 +53,13 @@ private slots:
         *
         */
     void terminerPartie();
+    /*!
+        *  \brief Re-initialise le jeu
+        *
+        *  Methode qui permet de re-initilaiser le jeu
+        *
+        */
+    void reinitialisationJeu();
     /*!
         *  \brief Mettre à jour la grille
         *

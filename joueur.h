@@ -20,6 +20,7 @@ class Joueur
        *
        */
 protected:
+    Position posInitiale; /*!< Position initiale du joueur*/
     Position posActuelle; /*!< Position actuelle du joueur*/
     std::vector<Strategie*> tStrategiesFuyard; /*!< Tableau contenant les stratégies du joueur*/
 public:
@@ -57,6 +58,13 @@ public:
         *
         */
     void avancer(const Position& decision);
+    /*!
+        *  \brief get de la position initiale
+        *
+        *  \return la position iniitale du joueur
+        *
+        */
+    Position getPosInitiale()const;
     /*!
         *  \brief get de la position actuelle
         *

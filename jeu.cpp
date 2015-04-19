@@ -60,7 +60,7 @@ void Jeu::terminerPartie(){
     Position posF=F.getPosActuelle();
     int cpt=0; //variable pour éviter une boucle infinie
 
-    while(posP!=posF && cpt<1000){
+    while(posP!=posF && cpt<1000000000){
         this->tourSuivant();
         posP=P.getPosActuelle();
         posF=F.getPosActuelle();

@@ -4,46 +4,63 @@
 
 MainWindow::MainWindow(Poursuivant& p, Fuyard& f,QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow),
-    jeu(p,f)
+    ui(new Ui::MainWindow)
+{
+    jeu = new Jeu(p,f);
+    this->initJeu();
+}
+
+MainWindow::~MainWindow()
+{
+    delete jeu;
+    delete ui;
+}
+
+void MainWindow::initJeu()
 {
     ui->setupUi(this);
     QObject::connect(ui->boutonTourSuiv,SIGNAL(clicked()),this,SLOT(tourSuivant()));
     QObject::connect(ui->boutonFinirPartie,SIGNAL(clicked()),this,SLOT(terminerPartie()));
+    QObject::connect(ui->boutonReinitJeu,SIGNAL(clicked()),this,SLOT(reinitialisationJeu()));
     QObject::connect(ui->boutonQuitter,SIGNAL(clicked()),this,SLOT(close()));
     QObject::connect(ui->histoP,SIGNAL(clicked(QModelIndex)),this,SLOT(clickOnHistoP()));
     QObject::connect(ui->histoF,SIGNAL(clicked(QModelIndex)),this,SLOT(clickOnHistoF()));
     this->lancerJeu();
 }
 
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
-
 void MainWindow::lancerJeu()
 {
-    jeu.lancerJeu();
+    jeu->lancerJeu();
     majPositionGrille();
 }
 
 void MainWindow::tourSuivant(){
-    jeu.tourSuivant();
+    jeu->tourSuivant();
     majPositionGrille();
 }
 
 void MainWindow::terminerPartie(){
-    jeu.terminerPartie();
+    jeu->terminerPartie();
     majPositionGrille();
 }
 
-void MainWindow::majPositionGrille(){
-    int xF=jeu.getFuyard().getPosActuelle().getX();
-    int yF=jeu.getFuyard().getPosActuelle().getY();
-    int xP=jeu.getPoursuivant().getPosActuelle().getX();
-    int yP=jeu.getPoursuivant().getPosActuelle().getY();
+void MainWindow::reinitialisationJeu()
+{
+    Poursuivant p = jeu->getPoursuivant();
+    p.avancer(p.getPosInitiale());
+    Fuyard f = jeu->getFuyard();
+    f.avancer(f.getPosInitiale());
+    jeu = new Jeu(p,f);
+    initJeu();
+}
 
-    QString nTour = QString::number(jeu.getHistorique().getNbTours());
+void MainWindow::majPositionGrille(){
+    int xF=jeu->getFuyard().getPosActuelle().getX();
+    int yF=jeu->getFuyard().getPosActuelle().getY();
+    int xP=jeu->getPoursuivant().getPosActuelle().getX();
+    int yP=jeu->getPoursuivant().getPosActuelle().getY();
+
+    QString nTour = QString::number(jeu->getHistorique().getNbTours());
 
     QString positionF="X:"+QString::number(xF)+"  Y:"+ QString::number(yF);
 
@@ -73,7 +90,7 @@ void MainWindow::majPositionGrille(){
 }
 
 void MainWindow::majHisto(){
-    Historique histo = jeu.getHistorique();
+    Historique histo = jeu->getHistorique();
 
     ui->histoF->clear();
     ui->histoP->clear();
@@ -97,7 +114,7 @@ void MainWindow::clickOnHistoP()
      //Récupération de l'index sur lequel l'utilisateur click
     int currentIndex=ui->histoP->currentRow();
 
-    Historique histo = jeu.getHistorique();
+    Historique histo = jeu->getHistorique();
     Position posP = histo.getPositionPoursuivant(currentIndex);
 
     //Affichage de la position demandé
@@ -112,7 +129,7 @@ void MainWindow::clickOnHistoF()
     //Récupération de l'index sur lequel l'utilisateur click
     int currentIndex=ui->histoF->currentRow();
 
-    Historique histo = jeu.getHistorique();
+    Historique histo = jeu->getHistorique();
     Position posF = histo.getPositionFuyard(currentIndex);
 
     //Affichage de la position demandé

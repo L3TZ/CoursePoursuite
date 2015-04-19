@@ -570,6 +570,19 @@
      <string>Historique des positions</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="boutonReinitJeu">
+    <property name="geometry">
+     <rect>
+      <x>940</x>
+      <y>560</y>
+      <width>111</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ré-initialiser le jeu</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

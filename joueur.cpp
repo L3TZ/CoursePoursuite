@@ -7,7 +7,7 @@ Joueur::Joueur()
 {
 }
 
-Joueur::Joueur(Position pos):posActuelle(pos)
+Joueur::Joueur(Position pos):posActuelle(pos),posInitiale(pos)
 {
 
 }
@@ -30,6 +30,11 @@ void Joueur::setStrategiesFuyard(const std::vector<Strategie *>& tStrategiesFuya
             throw PoursuivantExceptionStrategieHeterogene("Les stratégies du fuyard sont hétérogènes.",__LINE__);
     }
     this->tStrategiesFuyard=tStrategiesFuyard;
+}
+
+Position Joueur::getPosInitiale()const
+{
+    return posInitiale;
 }
 
 Position Joueur::getPosActuelle()const
