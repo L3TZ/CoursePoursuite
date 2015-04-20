@@ -11,7 +11,6 @@ StrategieCycleRandom::StrategieCycleRandom(int rayonActionFuyard, int ajoutX, in
 
 Position StrategieCycleRandom::decisionPoursuivant(const std::vector<Strategie *> &tStrategiesDecouvertes, const Position &posFuyard, const Position &posPoursuivant, int rayonActionPoursuivant) const
 {
-    std::srand(std::time(0));
     int ajoutX = std::rand() % 3 + (-1);
     int ajoutY = std::rand() % 3 + (-1);
 

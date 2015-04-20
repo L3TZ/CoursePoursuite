@@ -1,6 +1,9 @@
     #include <QApplication>
 #include <QDesktopWidget>
 #include <QRect>
+#include <ctime>
+#include <cstdlib>
+
 #include "mainwindow.h"
 //#include "jeu.h"
 #include "strategiequart.h"
@@ -9,6 +12,7 @@
 
 int main(int argc, char *argv[])
 {
+    std::srand(std::time(0));
     QApplication a(argc, argv);
 
     Poursuivant P(2,true,0,Position(5,25));
@@ -41,15 +45,21 @@ int main(int argc, char *argv[])
 
     const int RAYON_ACTION_FUYARD = 1;
 
-    StrategieCycleRandom st1(RAYON_ACTION_FUYARD,0,-1,0);
-    StrategieCycleRandom st2(RAYON_ACTION_FUYARD,1,0,1);
-    StrategieCycleRandom st3(RAYON_ACTION_FUYARD,0,1,2);
-    StrategieCycleRandom st4(RAYON_ACTION_FUYARD,-1,0,3);
+    StrategieCycleRandom st1(RAYON_ACTION_FUYARD,0,1,0);
+    StrategieCycleRandom st2(RAYON_ACTION_FUYARD,0,1,1);
+    StrategieCycleRandom st3(RAYON_ACTION_FUYARD,1,1,2);
+    StrategieCycleRandom st4(RAYON_ACTION_FUYARD,1,0,3);
+    StrategieCycleRandom st5(RAYON_ACTION_FUYARD,1,1,4);
+    StrategieCycleRandom st6(RAYON_ACTION_FUYARD,0,1,5);
+    StrategieCycleRandom st7(RAYON_ACTION_FUYARD,1,0,6);
 
     tStrat.push_back(&st1);
     tStrat.push_back(&st2);
     tStrat.push_back(&st3);
     tStrat.push_back(&st4);
+    tStrat.push_back(&st5);
+    tStrat.push_back(&st6);
+    tStrat.push_back(&st7);
     //Fin cycle random
 
 
