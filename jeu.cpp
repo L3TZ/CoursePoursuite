@@ -24,6 +24,21 @@ void Jeu::lancerJeu()
 
 }
 
+bool Jeu::testValTropPetite(int valeur){
+    if(valeur<0){
+        return true;
+    }
+    else return false;
+}
+
+bool Jeu::testValTropGrande(int valeur){
+    if(valeur>=200){
+        return true;
+    }
+    else return false;
+}
+
+
 void Jeu::tourSuivant(){
     if (P.getPosActuelle() != F.getPosActuelle()) {
 
@@ -31,6 +46,41 @@ void Jeu::tourSuivant(){
         Position decisionF=F.donnerDecision(histo);
         N.setFuyardDecision(decisionF);
         N.setPoursuivantDecision(decisionP);
+
+
+        //Calcul du déplacement des joueurs
+        int ecartXp = decisionP.getX()-histo.getDernierePositionPoursuivant().getX();
+        int ecartYp = decisionP.getY()-histo.getDernierePositionPoursuivant().getY();
+        int ecartXf = decisionF.getX()-histo.getDernierePositionFuyard().getX();
+        int ecartYf = decisionF.getY()-histo.getDernierePositionFuyard().getY();
+
+        //On sauvegarde les "vraies" positions pour l'historique, en fonction du déplacement demandé
+        P.setPosReelle(P.getPosReelle().getX()+ecartXp,P.getPosReelle().getY()+ecartYp);
+        F.setPosReelle(F.getPosReelle().getX()+ecartXf,F.getPosReelle().getY()+ecartYf);
+
+        // Si un des deux X a une valeur <0
+        if(testValTropPetite(decisionP.getX()) || testValTropPetite(decisionF.getX())){
+            decisionP.setX(decisionP.getX()+5);
+            decisionF.setX(decisionF.getX()+5);
+        }
+        // Si un des deux Y a une valeur <0
+        if(testValTropPetite(decisionP.getY()) || testValTropPetite(decisionF.getY())){
+            decisionP.setY(decisionP.getY()+5);
+            decisionF.setY(decisionF.getY()+5);
+
+        }
+        // Si un des deux X a une valeur >200
+        if(testValTropGrande(decisionP.getX()) || testValTropGrande(decisionF.getX())){
+            decisionP.setX(decisionP.getX()-5);
+            decisionF.setX(decisionF.getX()-5);
+
+        }
+        // Si un des deux Y a une valeur >200
+        if(testValTropGrande(decisionP.getY()) || testValTropGrande(decisionF.getY())){
+            decisionP.setY(decisionP.getY()-5);
+            decisionF.setY(decisionF.getY()-5);
+
+        }
 
         if (N.tourValide())
         {

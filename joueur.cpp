@@ -7,7 +7,7 @@ Joueur::Joueur()
 {
 }
 
-Joueur::Joueur(Position pos):posActuelle(pos),posInitiale(pos)
+Joueur::Joueur(Position pos):posActuelle(pos),posInitiale(pos),posActReelle(pos)
 {
 
 }
@@ -40,4 +40,14 @@ Position Joueur::getPosInitiale()const
 Position Joueur::getPosActuelle()const
 {
     return posActuelle;
+}
+
+Position Joueur::getPosReelle()const
+{
+    return posActReelle;
+}
+
+void Joueur::setPosReelle(int X, int Y){
+    posActReelle.setX(X);
+    posActReelle.setY(Y);
 }

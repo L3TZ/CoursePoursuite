@@ -39,6 +39,25 @@ public:
     Jeu(Poursuivant& p, Fuyard& f);
 
     /*!
+        *  \brief Test si la valeur est négative (hors grille)
+        *
+        *  \param valeur : X ou Y d'un joueur
+        *
+        *  \return vrai si la valeur est inférieure à 0, faux sinon
+        *
+        */
+    bool testValTropPetite(int valeur);
+
+    /*!
+        *  \brief Test si la valeur est trop grande (hors grille)
+        *
+        *  \param valeur : X ou Y d'un joueur
+        *
+        *  \return vrai si la valeur est supérieure ou égale à 200, faux sinon
+        *
+        */
+    bool testValTropGrande(int valeur);
+    /*!
         *  \brief Démarrer le jeu
         *
         *  Methode qui permet de lancer l'exécution du jeu

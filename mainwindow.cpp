@@ -68,10 +68,11 @@ void MainWindow::reinitialisationJeu()
 }
 */
 void MainWindow::majPositionGrille(){
-    int xF=jeu->getFuyard().getPosActuelle().getX();
-    int yF=jeu->getFuyard().getPosActuelle().getY();
-    int xP=jeu->getPoursuivant().getPosActuelle().getX();
-    int yP=jeu->getPoursuivant().getPosActuelle().getY();
+    // On prend les positions réelles pour mettre dans l'historique
+    int xF=jeu->getFuyard().getPosReelle().getX();
+    int yF=jeu->getFuyard().getPosReelle().getY();
+    int xP=jeu->getPoursuivant().getPosReelle().getX();
+    int yP=jeu->getPoursuivant().getPosReelle().getY();
 
     QString nTour = QString::number(jeu->getHistorique().getNbTours());
 
@@ -79,29 +80,37 @@ void MainWindow::majPositionGrille(){
 
     QString positionP="X:"+QString::number(xP)+"  Y:"+ QString::number(yP);
 
-
     ui->grille->clearContents();
     ui->labelNumTour->setText(nTour);
 
     ui->labelPosF->setText(positionF);
     ui->labelPosP->setText(positionP);
 
-    if (xF != xP || yF != yP){
+    ui->histoP->addItem(positionP);
+    ui->histoF->addItem(positionF);
 
-        ui->grille->setItem(xF,yF,new QTableWidgetItem);
-        ui->grille->item(xF,yF)->setBackground(Qt::blue);
 
-        ui->grille->setItem(xP,yP,new QTableWidgetItem);
-        ui->grille->item(xP,yP)->setBackground(Qt::red);
+
+    // On prend les positions Actuelles sur la grille
+    int XF=jeu->getFuyard().getPosActuelle().getX();
+    int YF=jeu->getFuyard().getPosActuelle().getY();
+    int XP=jeu->getPoursuivant().getPosActuelle().getX();
+    int YP=jeu->getPoursuivant().getPosActuelle().getY();
+
+    if (XF != XP || YF != YP){
+
+        ui->grille->setItem(XF,YF,new QTableWidgetItem);
+        ui->grille->item(XF,YF)->setBackground(Qt::blue);
+
+        ui->grille->setItem(XP,YP,new QTableWidgetItem);
+        ui->grille->item(XP,YP)->setBackground(Qt::red);
     }
     else {
-        ui->grille->setItem(xF,yF,new QTableWidgetItem);
-        ui->grille->item(xF,yF)->setBackground(Qt::green);
+        ui->grille->setItem(XF,YF,new QTableWidgetItem);
+        ui->grille->item(XF,YF)->setBackground(Qt::green);
     }
-
-    majHisto();
 }
-
+/*
 void MainWindow::majHisto(){
     Historique histo = jeu->getHistorique();
 
@@ -121,24 +130,20 @@ void MainWindow::majHisto(){
         ui->histoF->addItem(dernierePositionF);
     }
 }
-
+*/
 void MainWindow::clickOnHistoP()
 {
-     //Récupération de l'index sur lequel l'utilisateur click
+    //Récupération de l'index sur lequel l'utilisateur click
     int currentIndex=ui->histoP->currentRow();
 
+    //Récupération de la position associée à l'index
     Historique histo = jeu->getHistorique();
     Position posP = histo.getPositionPoursuivant(currentIndex);
 
-    //Affichage de la position demandée
-  //  ui->grille->clearContents(); //On efface la grille
-  //  majPositionGrille(); //On réaffiche les positions actuelles de P et F
-
-    //Récupération de l'item à modifier
+    //Récupération de l'item (case de la grille) à modifier
     QTableWidgetItem* item = ui->grille->item(posP.getX(),posP.getY());
     if(item != NULL){ // Si Null, on ne peut pas changer le texte car la case "n'existe pas"
         item->setText("X");
-        //ui->grille->item(posP.getX(),posP.getY())->setTextAlignment(Qt::AlignLeft); Délà aligné, on peut pas plus
     }
     else{
         cout<<"Else Poursuivant"<<endl;
@@ -149,19 +154,18 @@ void MainWindow::clickOnHistoP()
 
 void MainWindow::clickOnHistoF()
 {
-    //Récupération de l'index sur lequel l'utilisateur click
+    //Récupération de l'index de l'historique sur lequel l'utilisateur clique
     int currentIndex=ui->histoF->currentRow();
 
+    //Récupération de la position associée à l'index
     Historique histo = jeu->getHistorique();
     Position posF = histo.getPositionFuyard(currentIndex);
 
-    //Affichage de la position demandée
-  //  ui->grille->clearContents(); //On efface la grille
-  //  majPositionGrille(); //On réaffiche les positions actuelles de P et F
+    // Récupération de la dernière position du fuyard et du poursuivant
 
-    //Récupération de l'item à modifier
+    //Récupération de l'item (case de la grille) à modifier
     QTableWidgetItem* item = ui->grille->item(posF.getX(),posF.getY());
-    if(item == NULL){ // Si !Null on n'efface pas le background existant
+    if(item == NULL){ // Si !Null on ne remplace pas la couleur de la position actuelle (dernière position)
         ui->grille->setItem(posF.getX(),posF.getY(),new QTableWidgetItem);
         ui->grille->item(posF.getX(),posF.getY())->setBackground(QColor(0,0,255,100));
     }
@@ -177,8 +181,10 @@ void MainWindow::nouveauJeu(int yF,int xF, int yP, int xP){
     //Initialisation du jeu
     Poursuivant p = jeu->getPoursuivant();
     p.avancer(positionP);
+    p.setPosReelle(positionP.getX(),positionP.getY());
     Fuyard f = jeu->getFuyard();
     f.avancer(positionF);
+    f.setPosReelle(positionF.getX(),positionF.getY());
     jeu = new Jeu(p,f);
 
     this->lancerJeu();
@@ -192,6 +198,10 @@ void MainWindow::showDialogModal()
 }
 
 void MainWindow::recevoirValeur(QString position){
+    //On vide les historiques
+    ui->histoF->clear();
+    ui->histoP->clear();
+
     //Parse position
     QRegExp rx("[,]");
     QStringList list = position.split(rx,QString::SkipEmptyParts);

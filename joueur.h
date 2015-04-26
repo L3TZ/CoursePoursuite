@@ -22,6 +22,7 @@ class Joueur
 protected:
     Position posInitiale; /*!< Position initiale du joueur*/
     Position posActuelle; /*!< Position actuelle du joueur*/
+    Position posActReelle; /*!< Position réelle du joueur, au cas d'un X ou Y négatif*/
     std::vector<Strategie*> tStrategiesFuyard; /*!< Tableau contenant les stratégies du joueur*/
 public:
     /*!
@@ -72,6 +73,21 @@ public:
         *
         */
     Position getPosActuelle()const;
+    /*!
+        *  \brief get de la position actuelle réelle
+        *
+        *  \return la position actuelle réelle du joueur
+        *
+        */
+    Position getPosReelle()const;
+    /*!
+        *  \brief set de la position actuelle réelle
+        *
+        * \param X : valeur du nouveau X
+        * \param Y : valeur du nouveau Y
+        *
+        */
+    void setPosReelle(int X, int Y);
 };
 
 #endif // JOUEUR_H
