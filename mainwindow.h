@@ -145,6 +145,18 @@ private slots:
      *  Methode qui permet de quitter l'application (menu et jeu)
      */
     void quit();
+    /*!
+     * \brief afficherHistoF affiche tout l'historique du fuyard
+     *
+     *  Methode qui permet d'afficher tout l'historique du fuyard sur la grille
+     */
+    void afficherHistoF();
+    /*!
+     * \brief afficherHistoP affiche tout l'historique du poursuivant
+     *
+     *  Methode qui permet d'afficher tout l'historique du poursuivant sur la grille
+     */
+    void afficherHistoP();
 };
 
 #endif // MAINWINDOW_H

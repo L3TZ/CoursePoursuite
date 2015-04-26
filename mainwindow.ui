@@ -611,6 +611,34 @@
      <string>Ré-initialiser le jeu</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="affHistoF">
+    <property name="geometry">
+     <rect>
+      <x>1200</x>
+      <y>170</y>
+      <width>75</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Afficher tout
+ l'historique</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="affHistoP">
+    <property name="geometry">
+     <rect>
+      <x>1200</x>
+      <y>380</y>
+      <width>75</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Afficher tout
+ l'historique</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

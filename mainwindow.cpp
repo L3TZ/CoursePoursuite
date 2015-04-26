@@ -35,6 +35,8 @@ void MainWindow::initJeu()
     QObject::connect(ui->boutonQuitter,SIGNAL(clicked()),this,SLOT(close()));
     QObject::connect(ui->histoP,SIGNAL(clicked(QModelIndex)),this,SLOT(clickOnHistoP()));
     QObject::connect(ui->histoF,SIGNAL(clicked(QModelIndex)),this,SLOT(clickOnHistoF()));
+    QObject::connect(ui->affHistoF,SIGNAL(clicked()),this,SLOT(afficherHistoF()));
+    QObject::connect(ui->affHistoP,SIGNAL(clicked()),this,SLOT(afficherHistoP()));
     this->lancerJeu();
 }
 
@@ -205,3 +207,32 @@ void MainWindow::quit(){
     this->close();
 }
 
+void MainWindow::afficherHistoF(){
+    Historique histo = jeu->getHistorique();
+    for (int i=0; i<histo.getNbTours();i++){
+        Position posF=histo.getPositionFuyard(i);
+        QTableWidgetItem* item = ui->grille->item(posF.getX(),posF.getY());
+        if(item == NULL){ // Si !Null on n'efface pas le background existant
+            ui->grille->setItem(posF.getX(),posF.getY(),new QTableWidgetItem);
+            ui->grille->item(posF.getX(),posF.getY())->setBackground(QColor(0,0,255,100));
+        }
+    }
+}
+
+void MainWindow::afficherHistoP(){
+    Historique histo = jeu->getHistorique();
+    for (int i=0; i<histo.getNbTours();i++){
+        Position posP=histo.getPositionPoursuivant(i);
+        //Récupération de l'item à modifier
+        QTableWidgetItem* item = ui->grille->item(posP.getX(),posP.getY());
+        if(item != NULL){ // Si Null, on ne peut pas changer le texte car la case "n'existe pas"
+            item->setText("X");
+            //ui->grille->item(posP.getX(),posP.getY())->setTextAlignment(Qt::AlignLeft); Délà aligné, on peut pas plus
+        }
+        else{
+            cout<<"Else Poursuivant"<<endl;
+            ui->grille->setItem(posP.getX(),posP.getY(),new QTableWidgetItem);
+            ui->grille->item(posP.getX(),posP.getY())->setText("X");
+        }
+    }
+}
