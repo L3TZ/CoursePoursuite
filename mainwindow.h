@@ -5,6 +5,7 @@
 #include "jeu.h"
 #include "notaire.h"
 #include "historique.h"
+#include "dialog.h"
 
 namespace Ui {
 class MainWindow;
@@ -30,6 +31,7 @@ public:
 private:
     Ui::MainWindow *ui; /*!< Interface graphique*/
     Jeu * jeu; /*!< instance du jeu*/
+    Dialog *dlg;
 
     /*!
         *  \brief Initialisation du jeu
@@ -87,7 +89,7 @@ private slots:
         *  Methode qui permet de re-initilaiser le jeu
         *
         */
-    void reinitialisationJeu();
+  /*  void reinitialisationJeu();*/
     /*!
         *  \brief Mettre à jour la grille
         *
@@ -123,7 +125,26 @@ private slots:
          *  Methode qui permet d'initialiser le nouveau jeu lorsque l'utilisateur
          * click sur jouer.
          */
-    void nouveauJeu();
+    void nouveauJeu(int yF,int xF, int yP, int xP);
+    /*!
+     * \brief showDialogModal permet d'afficher le menu
+     *
+     *  Methode qui affiche le menu
+     */
+    void showDialogModal();
+    /*!
+     * \brief recevoirValeur permet de recuperer les valeurs du menu
+     * \param position position du poursuivant et du fuyard sous forme de QString
+     *
+     *  Methode qui permet de recuperer les valeurs du menu
+     */
+    void recevoirValeur(QString position);
+    /*!
+     * \brief quit quitter
+     *
+     *  Methode qui permet de quitter l'application (menu et jeu)
+     */
+    void quit();
 };
 
 #endif // MAINWINDOW_H

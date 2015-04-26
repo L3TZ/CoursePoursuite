@@ -41,7 +41,8 @@ SOURCES += main.cpp\
     Exception/poursuivantexceptionstrategieheterogene.cpp \
     strategiequart.cpp \
     strategiecycle.cpp \
-    strategiecyclerandom.cpp
+    strategiecyclerandom.cpp \
+    dialog.cpp
 
 HEADERS  += mainwindow.h \
     notaire.h \
@@ -69,8 +70,10 @@ HEADERS  += mainwindow.h \
     Exception/poursuivantexceptionstrategieheterogene.h \
     strategiequart.h \
     strategiecycle.h \
-    strategiecyclerandom.h
+    strategiecyclerandom.h \
+    dialog.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    dialog.ui
 
 RESOURCES +=
