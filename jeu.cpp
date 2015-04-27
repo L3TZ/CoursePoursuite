@@ -82,6 +82,17 @@ void Jeu::tourSuivant(){
             P.apprentissage(histo);
             N.raz();
         }
+        
+        //Affichage des positions dans la console 
+        Position posP=P.getPosActuelle();
+        Position posF=F.getPosActuelle();
+        cout<<"P : [";
+        posP.affiche();
+        cout<<"]"<<endl;
+        cout<<"F : [";
+        posF.affiche();
+        cout<<"]"<<endl;
+    
     } else {
         cout<<"Jeu terminé"<<endl;
     }
