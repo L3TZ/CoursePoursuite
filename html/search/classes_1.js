@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['historique',['Historique',['../class_historique.html',1,'']]]
+  ['fuyard',['Fuyard',['../class_fuyard.html',1,'']]]
 ];

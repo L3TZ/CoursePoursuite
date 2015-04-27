@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['position',['Position',['../class_position.html',1,'']]],
-  ['poursuivant',['Poursuivant',['../class_poursuivant.html',1,'']]]
+  ['notaire',['Notaire',['../class_notaire.html',1,'']]]
 ];

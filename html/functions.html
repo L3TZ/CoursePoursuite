@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>CoursePoursuite: Class Members</title>
+<title>Course Poursuite: Class Members</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">CoursePoursuite
+   <div id="projectname">Course Poursuite
+   &#160;<span id="projectnumber">1.0</span>
    </div>
   </td>
  </tr>
@@ -85,6 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_a"><span>a</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
       <li><a href="#index_d"><span>d</span></a></li>
+      <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_f"><span>f</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
       <li><a href="#index_h"><span>h</span></a></li>
@@ -94,6 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_n"><span>n</span></a></li>
       <li><a href="#index_o"><span>o</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
+      <li><a href="#index_q"><span>q</span></a></li>
       <li><a href="#index_r"><span>r</span></a></li>
       <li><a href="#index_s"><span>s</span></a></li>
       <li><a href="#index_t"><span>t</span></a></li>
@@ -145,6 +148,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>apprentissagePoursuivant()
 : <a class="el" href="class_strategie.html#a1d40497c9263c2da87912fa618034778">Strategie</a>
 , <a class="el" href="class_strategie_cycle.html#a3c61d6da6620c6ed91768132a9260dcb">StrategieCycle</a>
+, <a class="el" href="class_strategie_cycle_random.html#a2919592cc133818241fbf2ffceea962f">StrategieCycleRandom</a>
 , <a class="el" href="class_strategie_quart.html#aa1259cea1e6d3e2dbac992d0a147ac6b">StrategieQuart</a>
 , <a class="el" href="class_strategie_test.html#afd4afeed9b61bb75f5c5de05941ad12a">StrategieTest</a>
 </li>
@@ -174,12 +178,20 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>decisionPoursuivant()
 : <a class="el" href="class_strategie.html#a9c7c53d1570101a109c4a1feecc3df41">Strategie</a>
 , <a class="el" href="class_strategie_cycle.html#ac5cf3463ad935f065f4770959bf89b68">StrategieCycle</a>
+, <a class="el" href="class_strategie_cycle_random.html#a01b333e96fd1b74a55d174e543c6bd90">StrategieCycleRandom</a>
 , <a class="el" href="class_strategie_quart.html#a7b70c615d917d491eab80c384e7e1f40">StrategieQuart</a>
 , <a class="el" href="class_strategie_test.html#afaf086ac03aacb6bc7eb3724fe958b11">StrategieTest</a>
 </li>
 <li>donnerDecision()
 : <a class="el" href="class_fuyard.html#a246cc8a1483f8d2cb29d786454a19489">Fuyard</a>
 , <a class="el" href="class_poursuivant.html#a47fd56b9714bf34f9118906ab73cfc60">Poursuivant</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
+<li>envoyerValeur()
+: <a class="el" href="class_dialog.html#a26ae5de0279ed899f90cff59eb6307ca">Dialog</a>
 </li>
 </ul>
 
@@ -213,11 +225,17 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>getPosActuelle()
 : <a class="el" href="class_joueur.html#a9a772bda90699b3077d396516fbbbee9">Joueur</a>
 </li>
+<li>getPosInitiale()
+: <a class="el" href="class_joueur.html#aacd3a06e2f911c8161454d7f4496fd80">Joueur</a>
+</li>
 <li>getPositionFuyard()
 : <a class="el" href="class_historique.html#a66fa16da66f1f1d50181d88a51bf11eb">Historique</a>
 </li>
 <li>getPositionPoursuivant()
 : <a class="el" href="class_historique.html#a7c57d2eaf4406d79f51951421f5ab366">Historique</a>
+</li>
+<li>getPosReelle()
+: <a class="el" href="class_joueur.html#aa5ae26e849e0f25f084f8478d3eae473">Joueur</a>
 </li>
 <li>getPoursuivant()
 : <a class="el" href="class_jeu.html#ae16f8ec03a8fdf05142cbf503445775f">Jeu</a>
@@ -290,8 +308,14 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
+<li>posActReelle
+: <a class="el" href="class_joueur.html#acbb1f5dede563895c02ba0be9adf045e">Joueur</a>
+</li>
 <li>posActuelle
 : <a class="el" href="class_joueur.html#acc15da37ee69b1407967b10336b5cc04">Joueur</a>
+</li>
+<li>posInitiale
+: <a class="el" href="class_joueur.html#a0d14f84ccb38c53e00aa8c1d4f19b1be">Joueur</a>
 </li>
 <li>Position()
 : <a class="el" href="class_position.html#a369a577425f8ba02e8750d04b6a088db">Position</a>
@@ -302,9 +326,22 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </ul>
 
 
+<h3><a class="anchor" id="index_q"></a>- q -</h3><ul>
+<li>quitter()
+: <a class="el" href="class_dialog.html#a8ad09c707034de2b78b2d97a7ba0a136">Dialog</a>
+</li>
+<li>quitterApplication()
+: <a class="el" href="class_dialog.html#a9a355d03383e3a52c9ee6ff72fcab3e5">Dialog</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
 <li>raz()
 : <a class="el" href="class_notaire.html#adb4f78324a39ad3029cb08c77cecaebd">Notaire</a>
+</li>
+<li>recupValeur()
+: <a class="el" href="class_dialog.html#a1a4a2715ab270978657f1ca14ef16e83">Dialog</a>
 </li>
 <li>reductionRayonAction()
 : <a class="el" href="class_position.html#a94481efd4a8d728a2902ef986ffa86ed">Position</a>
@@ -315,6 +352,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
 <li>setFuyardDecision()
 : <a class="el" href="class_notaire.html#a3e8c8c2e756ee18b11c9a9c11bfd924a">Notaire</a>
+</li>
+<li>setPosReelle()
+: <a class="el" href="class_joueur.html#aa35d0a57f94f4c0731b48a4f9f6398cb">Joueur</a>
 </li>
 <li>setPoursuivantDecision()
 : <a class="el" href="class_notaire.html#a66feeec63a0103b0fa548339c855ea8c">Notaire</a>
@@ -335,8 +375,11 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
-<li>terminerPartie()
-: <a class="el" href="class_jeu.html#a0d86aba399ee50aaa12adae7b4eab5e0">Jeu</a>
+<li>testValTropGrande()
+: <a class="el" href="class_jeu.html#a964131a98373106ac8c042e3e3f2f061">Jeu</a>
+</li>
+<li>testValTropPetite()
+: <a class="el" href="class_jeu.html#a776ba4261bd10ee287917b5bce6cf1c8">Jeu</a>
 </li>
 <li>tourSuivant()
 : <a class="el" href="class_jeu.html#ab015e3afe1e410080c0074d177d92720">Jeu</a>
@@ -360,7 +403,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Apr 9 2015 00:41:30 for CoursePoursuite by
+    <li class="footer">Generated on Mon Apr 27 2015 20:10:29 for Course Poursuite by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

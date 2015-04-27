@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>CoursePoursuite: /Users/Stav/Documents/Fac/M1 S8/Projet/CoursePoursuite/mainwindow.h Source File</title>
+<title>Course Poursuite: /Users/Stav/Documents/Fac/M1 S8/Projet/CoursePoursuite/mainwindow.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">CoursePoursuite
+   <div id="projectname">Course Poursuite
+   &#160;<span id="projectnumber">1.0</span>
    </div>
   </td>
  </tr>
@@ -111,49 +112,65 @@ $(document).ready(function(){initNavTree('mainwindow_8h_source.html','');});
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="jeu_8h.html">jeu.h</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="notaire_8h.html">notaire.h</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="historique_8h.html">historique.h</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>Ui {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="class_main_window.html">MainWindow</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_main_window.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_main_window.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_main_window.html">MainWindow</a>(<a class="code" href="class_poursuivant.html">Poursuivant</a>&amp; p, <a class="code" href="class_fuyard.html">Fuyard</a>&amp; f,QWidget *parent = 0);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    ~<a class="code" href="class_main_window.html">MainWindow</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#abb5271751166e65aa0a59a86d6050c5a">lancerJeu</a>();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    Ui::MainWindow *ui; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="class_jeu.html">Jeu</a> jeu; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> tourSuivant();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> terminerPartie();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> majPositionGrille();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> majHisto();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> clickOnHistoP();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> clickOnHistoF();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif // MAINWINDOW_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;dialog.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>Ui {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="class_main_window.html">MainWindow</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_main_window.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_main_window.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_main_window.html">MainWindow</a>(<a class="code" href="class_poursuivant.html">Poursuivant</a>&amp; p, <a class="code" href="class_fuyard.html">Fuyard</a>&amp; f,QWidget *parent = 0);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    ~<a class="code" href="class_main_window.html">MainWindow</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#abb5271751166e65aa0a59a86d6050c5a">lancerJeu</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    Ui::MainWindow *ui; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="class_jeu.html">Jeu</a> * jeu; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_dialog.html">Dialog</a> *dlg;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> initJeu();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> afficheFenetreMenu(QList&lt;QWidget * &gt; listFenetreJeu);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    QList&lt;QWidget * &gt; creerListWidgetJeu();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    QList&lt;QWidget *&gt; creerListWidgetMenu();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;     <span class="keywordtype">void</span> afficheFenetreJeu();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> tourSuivant();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> terminerPartie();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> majPositionGrille();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> clickOnHistoP();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> clickOnHistoF();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">void</span> nouveauJeu(<span class="keywordtype">int</span> yF,<span class="keywordtype">int</span> xF, <span class="keywordtype">int</span> yP, <span class="keywordtype">int</span> xP);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">void</span> showDialogModal();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">void</span> recevoirValeur(QString position);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordtype">void</span> quit();</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">void</span> afficherHistoF();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">void</span> afficherHistoP();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;};</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor">#endif // MAINWINDOW_H</span></div>
 <div class="ttc" id="historique_8h_html"><div class="ttname"><a href="historique_8h.html">historique.h</a></div><div class="ttdoc">classe Historique </div></div>
 <div class="ttc" id="class_fuyard_html"><div class="ttname"><a href="class_fuyard.html">Fuyard</a></div><div class="ttdoc">classe representant le fuyard </div><div class="ttdef"><b>Definition:</b> fuyard.h:15</div></div>
 <div class="ttc" id="class_jeu_html"><div class="ttname"><a href="class_jeu.html">Jeu</a></div><div class="ttdoc">classe representant le Jeu </div><div class="ttdef"><b>Definition:</b> jeu.h:18</div></div>
 <div class="ttc" id="jeu_8h_html"><div class="ttname"><a href="jeu_8h.html">jeu.h</a></div><div class="ttdoc">classe Jeu </div></div>
 <div class="ttc" id="notaire_8h_html"><div class="ttname"><a href="notaire_8h.html">notaire.h</a></div><div class="ttdoc">classe Notaire </div></div>
+<div class="ttc" id="class_dialog_html"><div class="ttname"><a href="class_dialog.html">Dialog</a></div><div class="ttdef"><b>Definition:</b> dialog.h:13</div></div>
 <div class="ttc" id="class_poursuivant_html"><div class="ttname"><a href="class_poursuivant.html">Poursuivant</a></div><div class="ttdoc">classe representant le Poursuivant </div><div class="ttdef"><b>Definition:</b> poursuivant.h:17</div></div>
-<div class="ttc" id="class_main_window_html_abb5271751166e65aa0a59a86d6050c5a"><div class="ttname"><a href="class_main_window.html#abb5271751166e65aa0a59a86d6050c5a">MainWindow::lancerJeu</a></div><div class="ttdeci">void lancerJeu()</div><div class="ttdoc">Démarrer le jeu. </div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:24</div></div>
-<div class="ttc" id="class_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdef"><b>Definition:</b> mainwindow.h:13</div></div>
+<div class="ttc" id="class_main_window_html_abb5271751166e65aa0a59a86d6050c5a"><div class="ttname"><a href="class_main_window.html#abb5271751166e65aa0a59a86d6050c5a">MainWindow::lancerJeu</a></div><div class="ttdeci">void lancerJeu()</div><div class="ttdoc">Démarrer le jeu. </div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:44</div></div>
+<div class="ttc" id="class_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdef"><b>Definition:</b> mainwindow.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_0a29047237b3ca8a8e23ebe1c4c8f08e.html">Documents</a></li><li class="navelem"><a class="el" href="dir_cf3abc140a7f43136592d466476cc871.html">Fac</a></li><li class="navelem"><a class="el" href="dir_d6d2f6c0f13241803047659a9e22a8ca.html">M1 S8</a></li><li class="navelem"><a class="el" href="dir_a46e432a80db9bf6fb27d1645c97b936.html">Projet</a></li><li class="navelem"><a class="el" href="dir_2cbdcad72a2bae0c5de0b92d2be81fd1.html">CoursePoursuite</a></li><li class="navelem"><b>mainwindow.h</b></li>
-    <li class="footer">Generated on Thu Apr 9 2015 00:41:29 for CoursePoursuite by
+    <li class="footer">Generated on Mon Apr 27 2015 20:10:29 for Course Poursuite by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

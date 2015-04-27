@@ -1,5 +1,6 @@
 var dir_2cbdcad72a2bae0c5de0b92d2be81fd1 =
 [
+    [ "dialog.h", "dialog_8h_source.html", null ],
     [ "fuyard.h", "fuyard_8h.html", [
       [ "Fuyard", "class_fuyard.html", "class_fuyard" ]
     ] ],
@@ -26,6 +27,7 @@ var dir_2cbdcad72a2bae0c5de0b92d2be81fd1 =
       [ "Strategie", "class_strategie.html", "class_strategie" ]
     ] ],
     [ "strategiecycle.h", "strategiecycle_8h_source.html", null ],
+    [ "strategiecyclerandom.h", "strategiecyclerandom_8h_source.html", null ],
     [ "strategiequart.h", "strategiequart_8h_source.html", null ],
     [ "strategietest.h", "strategietest_8h_source.html", null ]
 ];

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>CoursePoursuite: /Users/Stav/Documents/Fac/M1 S8/Projet/CoursePoursuite/strategiecycle.h Source File</title>
+<title>Course Poursuite: /Users/Stav/Documents/Fac/M1 S8/Projet/CoursePoursuite/strategiecycle.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">CoursePoursuite
+   <div id="projectname">Course Poursuite
+   &#160;<span id="projectnumber">1.0</span>
    </div>
   </td>
  </tr>
@@ -121,7 +122,7 @@ $(document).ready(function(){initNavTree('strategiecycle_8h_source.html','');});
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> suppositionEtapeCyclePoursuivant;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_strategie_cycle.html">StrategieCycle</a>(<span class="keywordtype">int</span> rayonActionFuyard,<span class="keywordtype">int</span> ajoutX,<span class="keywordtype">int</span> ajoutY,<span class="keywordtype">int</span> longueurCycle);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_strategie_cycle.html">StrategieCycle</a>(<span class="keywordtype">int</span> rayonActionFuyard,<span class="keywordtype">int</span> ajoutX,<span class="keywordtype">int</span> ajoutY,<span class="keywordtype">int</span> positionDansCycle);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">bool</span> correspondancePosition()<span class="keyword">const</span>;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_position.html">Position</a> calculNouvellePosition(<span class="keyword">const</span> <a class="code" href="class_position.html">Position</a>&amp; posFuyard)<span class="keyword">const</span>;</div>
@@ -141,14 +142,14 @@ $(document).ready(function(){initNavTree('strategiecycle_8h_source.html','');});
 <div class="ttc" id="class_strategie_cycle_html_a14e83670a21b5d31665812162a6fedb5"><div class="ttname"><a href="class_strategie_cycle.html#a14e83670a21b5d31665812162a6fedb5">StrategieCycle::decisionFuyard</a></div><div class="ttdeci">virtual Position decisionFuyard(const std::vector&lt; Strategie * &gt; &amp;tStrategies, const Position &amp;posFuyard, const Position &amp;posPoursuivant) const </div><div class="ttdoc">Calcul de la décision du fuyard. </div><div class="ttdef"><b>Definition:</b> strategiecycle.cpp:30</div></div>
 <div class="ttc" id="class_strategie_cycle_html"><div class="ttname"><a href="class_strategie_cycle.html">StrategieCycle</a></div><div class="ttdef"><b>Definition:</b> strategiecycle.h:6</div></div>
 <div class="ttc" id="class_strategie_html"><div class="ttname"><a href="class_strategie.html">Strategie</a></div><div class="ttdoc">classe representant les stratégies du fuyard </div><div class="ttdef"><b>Definition:</b> strategie.h:15</div></div>
-<div class="ttc" id="class_strategie_cycle_html_a3c61d6da6620c6ed91768132a9260dcb"><div class="ttname"><a href="class_strategie_cycle.html#a3c61d6da6620c6ed91768132a9260dcb">StrategieCycle::apprentissagePoursuivant</a></div><div class="ttdeci">virtual void apprentissagePoursuivant(std::vector&lt; Strategie * &gt; &amp;tStrategiesDecouvertes, const std::vector&lt; Strategie * &gt; &amp;tStrategiesFuyard, const Position &amp;dernierePosPoursuivant, const Position &amp;dernierePosFuyard, const Position &amp;nouvellePosFuyard) const </div><div class="ttdoc">Apprentissage des stratégies du fuyard par le poursuivant. </div><div class="ttdef"><b>Definition:</b> strategiecycle.cpp:74</div></div>
+<div class="ttc" id="class_strategie_cycle_html_a3c61d6da6620c6ed91768132a9260dcb"><div class="ttname"><a href="class_strategie_cycle.html#a3c61d6da6620c6ed91768132a9260dcb">StrategieCycle::apprentissagePoursuivant</a></div><div class="ttdeci">virtual void apprentissagePoursuivant(std::vector&lt; Strategie * &gt; &amp;tStrategiesDecouvertes, const std::vector&lt; Strategie * &gt; &amp;tStrategiesFuyard, const Position &amp;dernierePosPoursuivant, const Position &amp;dernierePosFuyard, const Position &amp;nouvellePosFuyard) const </div><div class="ttdoc">Apprentissage des stratégies du fuyard par le poursuivant. </div><div class="ttdef"><b>Definition:</b> strategiecycle.cpp:64</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_0a29047237b3ca8a8e23ebe1c4c8f08e.html">Documents</a></li><li class="navelem"><a class="el" href="dir_cf3abc140a7f43136592d466476cc871.html">Fac</a></li><li class="navelem"><a class="el" href="dir_d6d2f6c0f13241803047659a9e22a8ca.html">M1 S8</a></li><li class="navelem"><a class="el" href="dir_a46e432a80db9bf6fb27d1645c97b936.html">Projet</a></li><li class="navelem"><a class="el" href="dir_2cbdcad72a2bae0c5de0b92d2be81fd1.html">CoursePoursuite</a></li><li class="navelem"><b>strategiecycle.h</b></li>
-    <li class="footer">Generated on Thu Apr 9 2015 00:41:29 for CoursePoursuite by
+    <li class="footer">Generated on Mon Apr 27 2015 20:10:29 for Course Poursuite by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

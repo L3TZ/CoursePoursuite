@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['terminerpartie',['terminerPartie',['../class_jeu.html#a0d86aba399ee50aaa12adae7b4eab5e0',1,'Jeu']]],
-  ['toursuivant',['tourSuivant',['../class_jeu.html#ab015e3afe1e410080c0074d177d92720',1,'Jeu']]],
-  ['tourvalide',['tourValide',['../class_notaire.html#a99261d48f134f91e5b6e8a7d06800e6f',1,'Notaire']]],
-  ['tstrategiesfuyard',['tStrategiesFuyard',['../class_joueur.html#a8048365b34b2de9e29cac2f179ef649f',1,'Joueur']]]
+  ['raz',['raz',['../class_notaire.html#adb4f78324a39ad3029cb08c77cecaebd',1,'Notaire']]],
+  ['recupvaleur',['recupValeur',['../class_dialog.html#a1a4a2715ab270978657f1ca14ef16e83',1,'Dialog']]],
+  ['reductionrayonaction',['reductionRayonAction',['../class_position.html#a94481efd4a8d728a2902ef986ffa86ed',1,'Position']]]
 ];

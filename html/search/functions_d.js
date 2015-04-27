@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['setfuyarddecision',['setFuyardDecision',['../class_notaire.html#a3e8c8c2e756ee18b11c9a9c11bfd924a',1,'Notaire']]],
-  ['setpoursuivantdecision',['setPoursuivantDecision',['../class_notaire.html#a66feeec63a0103b0fa548339c855ea8c',1,'Notaire']]],
-  ['setstrategiesfuyard',['setStrategiesFuyard',['../class_joueur.html#adec82d81ac3ee2f669395fdc885cc51d',1,'Joueur']]],
-  ['setx',['setX',['../class_position.html#ad46bb77324e2d9538e15f1a25320f1ff',1,'Position']]],
-  ['sety',['setY',['../class_position.html#a473274f1a3e4888f9c5e3eba0889a1ab',1,'Position']]],
-  ['strategie',['Strategie',['../class_strategie.html#abd2acd11f569eb890e02852806c4932a',1,'Strategie']]]
+  ['quitter',['quitter',['../class_dialog.html#a8ad09c707034de2b78b2d97a7ba0a136',1,'Dialog']]],
+  ['quitterapplication',['quitterApplication',['../class_dialog.html#a9a355d03383e3a52c9ee6ff72fcab3e5',1,'Dialog']]]
 ];

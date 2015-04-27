@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>CoursePoursuite: /Users/Stav/Documents/Fac/M1 S8/Projet/CoursePoursuite/joueur.h Source File</title>
+<title>Course Poursuite: /Users/Stav/Documents/Fac/M1 S8/Projet/CoursePoursuite/joueur.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">CoursePoursuite
+   <div id="projectname">Course Poursuite
+   &#160;<span id="projectnumber">1.0</span>
    </div>
   </td>
  </tr>
@@ -115,35 +116,45 @@ $(document).ready(function(){initNavTree('joueur_8h_source.html','');});
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_joueur.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_joueur.html">Joueur</a></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_joueur.html#acc15da37ee69b1407967b10336b5cc04">   23</a></span>&#160;    <a class="code" href="class_position.html">Position</a> <a class="code" href="class_joueur.html#acc15da37ee69b1407967b10336b5cc04">posActuelle</a>; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_joueur.html#a8048365b34b2de9e29cac2f179ef649f">   24</a></span>&#160;    std::vector&lt;Strategie*&gt; <a class="code" href="class_joueur.html#a8048365b34b2de9e29cac2f179ef649f">tStrategiesFuyard</a>; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="class_joueur.html#add6c98be3020651d84f6d75ccc1d867e">Joueur</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="class_joueur.html#add6c98be3020651d84f6d75ccc1d867e">Joueur</a>(<a class="code" href="class_position.html">Position</a> pos);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_joueur.html#adec82d81ac3ee2f669395fdc885cc51d">setStrategiesFuyard</a>(<span class="keyword">const</span> std::vector&lt;Strategie*&gt;&amp; <a class="code" href="class_joueur.html#a8048365b34b2de9e29cac2f179ef649f">tStrategiesFuyard</a>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_joueur.html#a452b34a6b13d4c69c6577ffb1cdcc379">avancer</a>(<span class="keyword">const</span> <a class="code" href="class_position.html">Position</a>&amp; decision);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="class_position.html">Position</a> <a class="code" href="class_joueur.html#a9a772bda90699b3077d396516fbbbee9">getPosActuelle</a>()<span class="keyword">const</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif // JOUEUR_H</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_joueur.html#a0d14f84ccb38c53e00aa8c1d4f19b1be">   23</a></span>&#160;    <a class="code" href="class_position.html">Position</a> <a class="code" href="class_joueur.html#a0d14f84ccb38c53e00aa8c1d4f19b1be">posInitiale</a>; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_joueur.html#acc15da37ee69b1407967b10336b5cc04">   24</a></span>&#160;    <a class="code" href="class_position.html">Position</a> <a class="code" href="class_joueur.html#acc15da37ee69b1407967b10336b5cc04">posActuelle</a>; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_joueur.html#acbb1f5dede563895c02ba0be9adf045e">   25</a></span>&#160;    <a class="code" href="class_position.html">Position</a> <a class="code" href="class_joueur.html#acbb1f5dede563895c02ba0be9adf045e">posActReelle</a>; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_joueur.html#a8048365b34b2de9e29cac2f179ef649f">   26</a></span>&#160;    std::vector&lt;Strategie*&gt; <a class="code" href="class_joueur.html#a8048365b34b2de9e29cac2f179ef649f">tStrategiesFuyard</a>; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_joueur.html#add6c98be3020651d84f6d75ccc1d867e">Joueur</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="class_joueur.html#add6c98be3020651d84f6d75ccc1d867e">Joueur</a>(<a class="code" href="class_position.html">Position</a> pos);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_joueur.html#adec82d81ac3ee2f669395fdc885cc51d">setStrategiesFuyard</a>(<span class="keyword">const</span> std::vector&lt;Strategie*&gt;&amp; <a class="code" href="class_joueur.html#a8048365b34b2de9e29cac2f179ef649f">tStrategiesFuyard</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_joueur.html#a452b34a6b13d4c69c6577ffb1cdcc379">avancer</a>(<span class="keyword">const</span> <a class="code" href="class_position.html">Position</a>&amp; decision);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="class_position.html">Position</a> <a class="code" href="class_joueur.html#aacd3a06e2f911c8161454d7f4496fd80">getPosInitiale</a>()<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="class_position.html">Position</a> <a class="code" href="class_joueur.html#a9a772bda90699b3077d396516fbbbee9">getPosActuelle</a>()<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="class_position.html">Position</a> <a class="code" href="class_joueur.html#aa5ae26e849e0f25f084f8478d3eae473">getPosReelle</a>()<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_joueur.html#aa35d0a57f94f4c0731b48a4f9f6398cb">setPosReelle</a>(<span class="keywordtype">int</span> X, <span class="keywordtype">int</span> Y);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif // JOUEUR_H</span></div>
+<div class="ttc" id="class_joueur_html_a0d14f84ccb38c53e00aa8c1d4f19b1be"><div class="ttname"><a href="class_joueur.html#a0d14f84ccb38c53e00aa8c1d4f19b1be">Joueur::posInitiale</a></div><div class="ttdeci">Position posInitiale</div><div class="ttdef"><b>Definition:</b> joueur.h:23</div></div>
+<div class="ttc" id="class_joueur_html_aacd3a06e2f911c8161454d7f4496fd80"><div class="ttname"><a href="class_joueur.html#aacd3a06e2f911c8161454d7f4496fd80">Joueur::getPosInitiale</a></div><div class="ttdeci">Position getPosInitiale() const </div><div class="ttdoc">get de la position initiale </div><div class="ttdef"><b>Definition:</b> joueur.cpp:35</div></div>
 <div class="ttc" id="class_joueur_html"><div class="ttname"><a href="class_joueur.html">Joueur</a></div><div class="ttdoc">classe representant le Joueur </div><div class="ttdef"><b>Definition:</b> joueur.h:16</div></div>
 <div class="ttc" id="class_joueur_html_adec82d81ac3ee2f669395fdc885cc51d"><div class="ttname"><a href="class_joueur.html#adec82d81ac3ee2f669395fdc885cc51d">Joueur::setStrategiesFuyard</a></div><div class="ttdeci">void setStrategiesFuyard(const std::vector&lt; Strategie * &gt; &amp;tStrategiesFuyard)</div><div class="ttdoc">set le tableau des stratégies </div><div class="ttdef"><b>Definition:</b> joueur.cpp:20</div></div>
-<div class="ttc" id="class_joueur_html_a9a772bda90699b3077d396516fbbbee9"><div class="ttname"><a href="class_joueur.html#a9a772bda90699b3077d396516fbbbee9">Joueur::getPosActuelle</a></div><div class="ttdeci">Position getPosActuelle() const </div><div class="ttdoc">get de la position actuelle </div><div class="ttdef"><b>Definition:</b> joueur.cpp:35</div></div>
+<div class="ttc" id="class_joueur_html_a9a772bda90699b3077d396516fbbbee9"><div class="ttname"><a href="class_joueur.html#a9a772bda90699b3077d396516fbbbee9">Joueur::getPosActuelle</a></div><div class="ttdeci">Position getPosActuelle() const </div><div class="ttdoc">get de la position actuelle </div><div class="ttdef"><b>Definition:</b> joueur.cpp:40</div></div>
 <div class="ttc" id="class_position_html"><div class="ttname"><a href="class_position.html">Position</a></div><div class="ttdoc">classe representant la Position d&#39;un joueur </div><div class="ttdef"><b>Definition:</b> position.h:14</div></div>
 <div class="ttc" id="class_joueur_html_add6c98be3020651d84f6d75ccc1d867e"><div class="ttname"><a href="class_joueur.html#add6c98be3020651d84f6d75ccc1d867e">Joueur::Joueur</a></div><div class="ttdeci">Joueur()</div><div class="ttdoc">Constructeur. </div><div class="ttdef"><b>Definition:</b> joueur.cpp:6</div></div>
 <div class="ttc" id="strategie_8h_html"><div class="ttname"><a href="strategie_8h.html">strategie.h</a></div><div class="ttdoc">classe Strategie </div></div>
-<div class="ttc" id="class_joueur_html_a8048365b34b2de9e29cac2f179ef649f"><div class="ttname"><a href="class_joueur.html#a8048365b34b2de9e29cac2f179ef649f">Joueur::tStrategiesFuyard</a></div><div class="ttdeci">std::vector&lt; Strategie * &gt; tStrategiesFuyard</div><div class="ttdef"><b>Definition:</b> joueur.h:24</div></div>
+<div class="ttc" id="class_joueur_html_aa35d0a57f94f4c0731b48a4f9f6398cb"><div class="ttname"><a href="class_joueur.html#aa35d0a57f94f4c0731b48a4f9f6398cb">Joueur::setPosReelle</a></div><div class="ttdeci">void setPosReelle(int X, int Y)</div><div class="ttdoc">set de la position actuelle réelle </div><div class="ttdef"><b>Definition:</b> joueur.cpp:50</div></div>
+<div class="ttc" id="class_joueur_html_a8048365b34b2de9e29cac2f179ef649f"><div class="ttname"><a href="class_joueur.html#a8048365b34b2de9e29cac2f179ef649f">Joueur::tStrategiesFuyard</a></div><div class="ttdeci">std::vector&lt; Strategie * &gt; tStrategiesFuyard</div><div class="ttdef"><b>Definition:</b> joueur.h:26</div></div>
 <div class="ttc" id="position_8h_html"><div class="ttname"><a href="position_8h.html">position.h</a></div><div class="ttdoc">classe Position </div></div>
 <div class="ttc" id="class_joueur_html_a452b34a6b13d4c69c6577ffb1cdcc379"><div class="ttname"><a href="class_joueur.html#a452b34a6b13d4c69c6577ffb1cdcc379">Joueur::avancer</a></div><div class="ttdeci">void avancer(const Position &amp;decision)</div><div class="ttdoc">Avancer d&#39;un coup. </div><div class="ttdef"><b>Definition:</b> joueur.cpp:15</div></div>
-<div class="ttc" id="class_joueur_html_acc15da37ee69b1407967b10336b5cc04"><div class="ttname"><a href="class_joueur.html#acc15da37ee69b1407967b10336b5cc04">Joueur::posActuelle</a></div><div class="ttdeci">Position posActuelle</div><div class="ttdef"><b>Definition:</b> joueur.h:23</div></div>
+<div class="ttc" id="class_joueur_html_aa5ae26e849e0f25f084f8478d3eae473"><div class="ttname"><a href="class_joueur.html#aa5ae26e849e0f25f084f8478d3eae473">Joueur::getPosReelle</a></div><div class="ttdeci">Position getPosReelle() const </div><div class="ttdoc">get de la position actuelle réelle </div><div class="ttdef"><b>Definition:</b> joueur.cpp:45</div></div>
+<div class="ttc" id="class_joueur_html_acc15da37ee69b1407967b10336b5cc04"><div class="ttname"><a href="class_joueur.html#acc15da37ee69b1407967b10336b5cc04">Joueur::posActuelle</a></div><div class="ttdeci">Position posActuelle</div><div class="ttdef"><b>Definition:</b> joueur.h:24</div></div>
+<div class="ttc" id="class_joueur_html_acbb1f5dede563895c02ba0be9adf045e"><div class="ttname"><a href="class_joueur.html#acbb1f5dede563895c02ba0be9adf045e">Joueur::posActReelle</a></div><div class="ttdeci">Position posActReelle</div><div class="ttdef"><b>Definition:</b> joueur.h:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_0a29047237b3ca8a8e23ebe1c4c8f08e.html">Documents</a></li><li class="navelem"><a class="el" href="dir_cf3abc140a7f43136592d466476cc871.html">Fac</a></li><li class="navelem"><a class="el" href="dir_d6d2f6c0f13241803047659a9e22a8ca.html">M1 S8</a></li><li class="navelem"><a class="el" href="dir_a46e432a80db9bf6fb27d1645c97b936.html">Projet</a></li><li class="navelem"><a class="el" href="dir_2cbdcad72a2bae0c5de0b92d2be81fd1.html">CoursePoursuite</a></li><li class="navelem"><a class="el" href="joueur_8h.html">joueur.h</a></li>
-    <li class="footer">Generated on Thu Apr 9 2015 00:41:29 for CoursePoursuite by
+    <li class="footer">Generated on Mon Apr 27 2015 20:10:29 for Course Poursuite by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

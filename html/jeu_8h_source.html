@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>CoursePoursuite: /Users/Stav/Documents/Fac/M1 S8/Projet/CoursePoursuite/jeu.h Source File</title>
+<title>Course Poursuite: /Users/Stav/Documents/Fac/M1 S8/Projet/CoursePoursuite/jeu.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">CoursePoursuite
+   <div id="projectname">Course Poursuite
+   &#160;<span id="projectnumber">1.0</span>
    </div>
   </td>
  </tr>
@@ -124,24 +125,26 @@ $(document).ready(function(){initNavTree('jeu_8h_source.html','');});
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="class_jeu.html#a60a0ee3b8e06b50ff16aeac20046ed2c">Jeu</a>(<a class="code" href="class_poursuivant.html">Poursuivant</a>&amp; p, <a class="code" href="class_fuyard.html">Fuyard</a>&amp; f);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jeu.html#a84033a99b3f0067d65cb3b4760e03ba6">lancerJeu</a>();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jeu.html#ab015e3afe1e410080c0074d177d92720">tourSuivant</a>();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jeu.html#a0d86aba399ee50aaa12adae7b4eab5e0">terminerPartie</a>();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="class_poursuivant.html">Poursuivant</a> <a class="code" href="class_jeu.html#ae16f8ec03a8fdf05142cbf503445775f">getPoursuivant</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="class_fuyard.html">Fuyard</a> <a class="code" href="class_jeu.html#aa26b68924597947993a5402c9dc04fbd">getFuyard</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="class_historique.html">Historique</a> <a class="code" href="class_jeu.html#a6f2ddab1d1940c249e35bd5a313926a1">getHistorique</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif // JEU_H</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_jeu.html#a776ba4261bd10ee287917b5bce6cf1c8">testValTropPetite</a>(<span class="keywordtype">int</span> valeur);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_jeu.html#a964131a98373106ac8c042e3e3f2f061">testValTropGrande</a>(<span class="keywordtype">int</span> valeur);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jeu.html#a84033a99b3f0067d65cb3b4760e03ba6">lancerJeu</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jeu.html#ab015e3afe1e410080c0074d177d92720">tourSuivant</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="class_poursuivant.html">Poursuivant</a> <a class="code" href="class_jeu.html#ae16f8ec03a8fdf05142cbf503445775f">getPoursuivant</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="class_fuyard.html">Fuyard</a> <a class="code" href="class_jeu.html#aa26b68924597947993a5402c9dc04fbd">getFuyard</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="class_historique.html">Historique</a> <a class="code" href="class_jeu.html#a6f2ddab1d1940c249e35bd5a313926a1">getHistorique</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif // JEU_H</span></div>
+<div class="ttc" id="class_jeu_html_a964131a98373106ac8c042e3e3f2f061"><div class="ttname"><a href="class_jeu.html#a964131a98373106ac8c042e3e3f2f061">Jeu::testValTropGrande</a></div><div class="ttdeci">bool testValTropGrande(int valeur)</div><div class="ttdoc">Test si la valeur est trop grande (hors grille) </div><div class="ttdef"><b>Definition:</b> jeu.cpp:26</div></div>
 <div class="ttc" id="historique_8h_html"><div class="ttname"><a href="historique_8h.html">historique.h</a></div><div class="ttdoc">classe Historique </div></div>
-<div class="ttc" id="class_jeu_html_ae16f8ec03a8fdf05142cbf503445775f"><div class="ttname"><a href="class_jeu.html#ae16f8ec03a8fdf05142cbf503445775f">Jeu::getPoursuivant</a></div><div class="ttdeci">Poursuivant getPoursuivant() const </div><div class="ttdoc">Getter du poursuivant. </div><div class="ttdef"><b>Definition:</b> jeu.cpp:71</div></div>
+<div class="ttc" id="class_jeu_html_ae16f8ec03a8fdf05142cbf503445775f"><div class="ttname"><a href="class_jeu.html#ae16f8ec03a8fdf05142cbf503445775f">Jeu::getPoursuivant</a></div><div class="ttdeci">Poursuivant getPoursuivant() const </div><div class="ttdoc">Getter du poursuivant. </div><div class="ttdef"><b>Definition:</b> jeu.cpp:90</div></div>
 <div class="ttc" id="class_fuyard_html"><div class="ttname"><a href="class_fuyard.html">Fuyard</a></div><div class="ttdoc">classe representant le fuyard </div><div class="ttdef"><b>Definition:</b> fuyard.h:15</div></div>
 <div class="ttc" id="class_jeu_html"><div class="ttname"><a href="class_jeu.html">Jeu</a></div><div class="ttdoc">classe representant le Jeu </div><div class="ttdef"><b>Definition:</b> jeu.h:18</div></div>
 <div class="ttc" id="class_jeu_html_a84033a99b3f0067d65cb3b4760e03ba6"><div class="ttname"><a href="class_jeu.html#a84033a99b3f0067d65cb3b4760e03ba6">Jeu::lancerJeu</a></div><div class="ttdeci">void lancerJeu()</div><div class="ttdoc">Démarrer le jeu. </div><div class="ttdef"><b>Definition:</b> jeu.cpp:11</div></div>
-<div class="ttc" id="class_jeu_html_aa26b68924597947993a5402c9dc04fbd"><div class="ttname"><a href="class_jeu.html#aa26b68924597947993a5402c9dc04fbd">Jeu::getFuyard</a></div><div class="ttdeci">Fuyard getFuyard() const </div><div class="ttdoc">Getter du fuyard. </div><div class="ttdef"><b>Definition:</b> jeu.cpp:75</div></div>
-<div class="ttc" id="class_jeu_html_a0d86aba399ee50aaa12adae7b4eab5e0"><div class="ttname"><a href="class_jeu.html#a0d86aba399ee50aaa12adae7b4eab5e0">Jeu::terminerPartie</a></div><div class="ttdeci">void terminerPartie()</div><div class="ttdoc">Terminer la partie. </div><div class="ttdef"><b>Definition:</b> jeu.cpp:58</div></div>
+<div class="ttc" id="class_jeu_html_aa26b68924597947993a5402c9dc04fbd"><div class="ttname"><a href="class_jeu.html#aa26b68924597947993a5402c9dc04fbd">Jeu::getFuyard</a></div><div class="ttdeci">Fuyard getFuyard() const </div><div class="ttdoc">Getter du fuyard. </div><div class="ttdef"><b>Definition:</b> jeu.cpp:94</div></div>
+<div class="ttc" id="class_jeu_html_a776ba4261bd10ee287917b5bce6cf1c8"><div class="ttname"><a href="class_jeu.html#a776ba4261bd10ee287917b5bce6cf1c8">Jeu::testValTropPetite</a></div><div class="ttdeci">bool testValTropPetite(int valeur)</div><div class="ttdoc">Test si la valeur est négative (hors grille) </div><div class="ttdef"><b>Definition:</b> jeu.cpp:19</div></div>
 <div class="ttc" id="class_notaire_html"><div class="ttname"><a href="class_notaire.html">Notaire</a></div><div class="ttdoc">classe representant le Notaire </div><div class="ttdef"><b>Definition:</b> notaire.h:15</div></div>
 <div class="ttc" id="fuyard_8h_html"><div class="ttname"><a href="fuyard_8h.html">fuyard.h</a></div><div class="ttdoc">classe Fuyard </div></div>
 <div class="ttc" id="class_historique_html"><div class="ttname"><a href="class_historique.html">Historique</a></div><div class="ttdoc">classe representant l&#39;historique du jeu </div><div class="ttdef"><b>Definition:</b> historique.h:15</div></div>
@@ -149,15 +152,15 @@ $(document).ready(function(){initNavTree('jeu_8h_source.html','');});
 <div class="ttc" id="class_poursuivant_html"><div class="ttname"><a href="class_poursuivant.html">Poursuivant</a></div><div class="ttdoc">classe representant le Poursuivant </div><div class="ttdef"><b>Definition:</b> poursuivant.h:17</div></div>
 <div class="ttc" id="poursuivant_8h_html"><div class="ttname"><a href="poursuivant_8h.html">poursuivant.h</a></div><div class="ttdoc">classe Poursuivant </div></div>
 <div class="ttc" id="class_jeu_html_a60a0ee3b8e06b50ff16aeac20046ed2c"><div class="ttname"><a href="class_jeu.html#a60a0ee3b8e06b50ff16aeac20046ed2c">Jeu::Jeu</a></div><div class="ttdeci">Jeu(Poursuivant &amp;p, Fuyard &amp;f)</div><div class="ttdoc">Constructeur. </div><div class="ttdef"><b>Definition:</b> jeu.cpp:7</div></div>
-<div class="ttc" id="class_jeu_html_ab015e3afe1e410080c0074d177d92720"><div class="ttname"><a href="class_jeu.html#ab015e3afe1e410080c0074d177d92720">Jeu::tourSuivant</a></div><div class="ttdeci">void tourSuivant()</div><div class="ttdoc">Passer au prochain tour. </div><div class="ttdef"><b>Definition:</b> jeu.cpp:27</div></div>
-<div class="ttc" id="class_jeu_html_a6f2ddab1d1940c249e35bd5a313926a1"><div class="ttname"><a href="class_jeu.html#a6f2ddab1d1940c249e35bd5a313926a1">Jeu::getHistorique</a></div><div class="ttdeci">Historique getHistorique() const </div><div class="ttdoc">Getter de l&#39;historique. </div><div class="ttdef"><b>Definition:</b> jeu.cpp:79</div></div>
+<div class="ttc" id="class_jeu_html_ab015e3afe1e410080c0074d177d92720"><div class="ttname"><a href="class_jeu.html#ab015e3afe1e410080c0074d177d92720">Jeu::tourSuivant</a></div><div class="ttdeci">void tourSuivant()</div><div class="ttdoc">Passer au prochain tour. </div><div class="ttdef"><b>Definition:</b> jeu.cpp:34</div></div>
+<div class="ttc" id="class_jeu_html_a6f2ddab1d1940c249e35bd5a313926a1"><div class="ttname"><a href="class_jeu.html#a6f2ddab1d1940c249e35bd5a313926a1">Jeu::getHistorique</a></div><div class="ttdeci">Historique getHistorique() const </div><div class="ttdoc">Getter de l&#39;historique. </div><div class="ttdef"><b>Definition:</b> jeu.cpp:98</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_0a29047237b3ca8a8e23ebe1c4c8f08e.html">Documents</a></li><li class="navelem"><a class="el" href="dir_cf3abc140a7f43136592d466476cc871.html">Fac</a></li><li class="navelem"><a class="el" href="dir_d6d2f6c0f13241803047659a9e22a8ca.html">M1 S8</a></li><li class="navelem"><a class="el" href="dir_a46e432a80db9bf6fb27d1645c97b936.html">Projet</a></li><li class="navelem"><a class="el" href="dir_2cbdcad72a2bae0c5de0b92d2be81fd1.html">CoursePoursuite</a></li><li class="navelem"><a class="el" href="jeu_8h.html">jeu.h</a></li>
-    <li class="footer">Generated on Thu Apr 9 2015 00:41:29 for CoursePoursuite by
+    <li class="footer">Generated on Mon Apr 27 2015 20:10:29 for Course Poursuite by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
