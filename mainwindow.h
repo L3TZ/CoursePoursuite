@@ -104,7 +104,7 @@ private slots:
         *  Methode qui permet de mettre à jour l'affichage de l'historique
         * au fur et à mesure que le jeu se déroule
         */
-    void majHisto();
+    /*void majHisto();*/
     /*!
         *  \brief Affiche une ancienne position de P
         *
