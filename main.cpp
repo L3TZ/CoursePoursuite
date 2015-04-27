@@ -33,6 +33,10 @@ int main(int argc, char *argv[])
     StrategieQuart st8(1,-1,1,-1,-1);  //P X plus petit, Y plus grand
     StrategieQuart st9(1,-1,-1,1,1); //P X plus petit, Y plus petit
 
+    tStrat.push_back(&st1);
+    tStrat.push_back(&st2);
+    tStrat.push_back(&st3);
+    tStrat.push_back(&st4);
     tStrat.push_back(&st5);
     tStrat.push_back(&st6);
     tStrat.push_back(&st7);
@@ -62,6 +66,26 @@ int main(int argc, char *argv[])
     tStrat.push_back(&st7);
     //Fin cycle random
 
+    //STRATEGIE CYCLE
+
+//    const int RAYON_ACTION_FUYARD = 1;
+
+//    StrategieCycle st1(RAYON_ACTION_FUYARD,0,1,0);
+//    StrategieCycle st2(RAYON_ACTION_FUYARD,0,1,1);
+//    StrategieCycle st3(RAYON_ACTION_FUYARD,1,1,2);
+//    StrategieCycle st4(RAYON_ACTION_FUYARD,1,0,3);
+//    StrategieCycle st5(RAYON_ACTION_FUYARD,1,1,4);
+//    StrategieCycle st6(RAYON_ACTION_FUYARD,0,1,5);
+//    StrategieCycle st7(RAYON_ACTION_FUYARD,1,0,6);
+
+//    tStrat.push_back(&st1);
+//    tStrat.push_back(&st2);
+//    tStrat.push_back(&st3);
+//    tStrat.push_back(&st4);
+//    tStrat.push_back(&st5);
+//    tStrat.push_back(&st6);
+//    tStrat.push_back(&st7);
+    //Fin cycle
 
     P.setStrategiesFuyard(tStrat);
     F.setStrategiesFuyard(tStrat);
