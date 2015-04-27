@@ -33,7 +33,7 @@ Position StrategieCycle::decisionFuyard(const std::vector<Strategie *> &tStrateg
     {
         if (dynamic_cast<StrategieCycle*>(tStrategies[i])->correspondancePosition())
         {
-            std::cout<<"--Utilisation stratégie n°"<<i+1<<"--"<<std::endl;
+            std::cout<<"--Utilisation strategie num"<<i+1<<"--"<<std::endl;
             compteurMouvements=(compteurMouvements+1)%(tStrategies.size());
             return dynamic_cast<StrategieCycle*>(tStrategies[i])->calculNouvellePosition(posFuyard);
         }

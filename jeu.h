@@ -73,14 +73,6 @@ public:
         */
     void tourSuivant();
     /*!
-        *  \brief Terminer la partie
-        *
-        *  Methode qui permet de dérouler toute la partie
-        *
-        */
-    void terminerPartie();
-
-    /*!
         *  \brief Getter du poursuivant
         *
         *  \return le poursuivant du jeu

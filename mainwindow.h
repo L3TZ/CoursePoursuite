@@ -84,13 +84,6 @@ private slots:
         */
     void terminerPartie();
     /*!
-        *  \brief Re-initialise le jeu
-        *
-        *  Methode qui permet de re-initilaiser le jeu
-        *
-        */
-  /*  void reinitialisationJeu();*/
-    /*!
         *  \brief Mettre à jour la grille
         *
         *  Methode qui permet de mettre à jour la grille avec les positions
@@ -98,13 +91,6 @@ private slots:
         *
         */
     void majPositionGrille();
-    /*!
-        *  \brief Mettre à jour l'affichage de l'historique
-        *
-        *  Methode qui permet de mettre à jour l'affichage de l'historique
-        * au fur et à mesure que le jeu se déroule
-        */
-    /*void majHisto();*/
     /*!
         *  \brief Affiche une ancienne position de P
         *

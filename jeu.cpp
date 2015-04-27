@@ -14,14 +14,6 @@ void Jeu::lancerJeu()
     Position posF=F.getPosActuelle();
 
     histo.ajoutEntree(posF,posP);
-
-    cout<<"P : [";
-    posP.affiche();
-    cout<<"]"<<endl;
-    cout<<"F : [";
-    posF.affiche();
-    cout<<"]"<<endl;
-
 }
 
 bool Jeu::testValTropPetite(int valeur){
@@ -60,25 +52,25 @@ void Jeu::tourSuivant(){
 
         // Si un des deux X a une valeur <0
         if(testValTropPetite(decisionP.getX()) || testValTropPetite(decisionF.getX())){
-            decisionP.setX(decisionP.getX()+5);
-            decisionF.setX(decisionF.getX()+5);
+            decisionP.setX(decisionP.getX()+15);
+            decisionF.setX(decisionF.getX()+15);
         }
         // Si un des deux Y a une valeur <0
         if(testValTropPetite(decisionP.getY()) || testValTropPetite(decisionF.getY())){
-            decisionP.setY(decisionP.getY()+5);
-            decisionF.setY(decisionF.getY()+5);
+            decisionP.setY(decisionP.getY()+15);
+            decisionF.setY(decisionF.getY()+15);
 
         }
         // Si un des deux X a une valeur >200
         if(testValTropGrande(decisionP.getX()) || testValTropGrande(decisionF.getX())){
-            decisionP.setX(decisionP.getX()-5);
-            decisionF.setX(decisionF.getX()-5);
+            decisionP.setX(decisionP.getX()-15);
+            decisionF.setX(decisionF.getX()-15);
 
         }
         // Si un des deux Y a une valeur >200
         if(testValTropGrande(decisionP.getY()) || testValTropGrande(decisionF.getY())){
-            decisionP.setY(decisionP.getY()-5);
-            decisionF.setY(decisionF.getY()-5);
+            decisionP.setY(decisionP.getY()-15);
+            decisionF.setY(decisionF.getY()-15);
 
         }
 
@@ -90,31 +82,8 @@ void Jeu::tourSuivant(){
             P.apprentissage(histo);
             N.raz();
         }
-        Position posP=P.getPosActuelle();
-        Position posF=F.getPosActuelle();
-
-
-        cout<<"P : [";
-        posP.affiche();
-        cout<<"]"<<endl;
-        cout<<"F : [";
-        posF.affiche();
-        cout<<"]"<<endl;
     } else {
         cout<<"Jeu terminé"<<endl;
-    }
-}
-
-void Jeu::terminerPartie(){
-    Position posP=P.getPosActuelle();
-    Position posF=F.getPosActuelle();
-    int cpt=0; //variable pour éviter une boucle infinie
-
-    while(posP!=posF && cpt<1000000000){
-        this->tourSuivant();
-        posP=P.getPosActuelle();
-        posF=F.getPosActuelle();
-        cpt++;
     }
 }
 

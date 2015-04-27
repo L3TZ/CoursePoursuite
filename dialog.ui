@@ -102,7 +102,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Y:</string>
+    <string>Y :</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_4">
@@ -140,7 +140,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Y:</string>
+    <string>Y :</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="xPosP">
@@ -219,6 +219,19 @@
    </property>
    <property name="text">
     <string>Quitter</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>200</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>( 0 &lt; X/Y &lt; 200 )</string>
    </property>
   </widget>
  </widget>

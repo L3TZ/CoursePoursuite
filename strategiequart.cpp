@@ -33,7 +33,7 @@ Position StrategieQuart::decisionFuyard(const std::vector<Strategie *> &tStrateg
     {
         if (dynamic_cast<StrategieQuart*>(tStrategies[i])->correspondancePosition(posFuyard,posPoursuivant))
         {
-            std::cout<<"--Utilisation stratégie n°"<<i+1<<"--"<<std::endl;
+            std::cout<<"--Utilisation strategie num"<<i+1<<"--"<<std::endl;
             return dynamic_cast<StrategieQuart*>(tStrategies[i])->calculNouvellePosition(posFuyard);
         }
     }
